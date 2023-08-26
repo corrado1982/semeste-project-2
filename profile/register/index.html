@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>Bit.com | Register Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="navigation bg-secondary d-flex justify-content-around">
+        <div class="search-container">
+          <form action="">
+            <input type="text" placeholder="Search..." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <a class="active" href="index.html">Bid.com</a>
+        <div class="rigth-nav">
+          <form action="">
+            <div>
+              <button>Log in</button>
+            </div>
+          </form>
+          <form action="">
+            <div>
+              <button>Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main>
+      Register Page
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              aria-label="First name"
+            />
+          </div>
+          <!-- <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                aria-label="Last name"
+              />
+            </div> -->
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
+    <footer></footer>
+  </body>
+</html>
