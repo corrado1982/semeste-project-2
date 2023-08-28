@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="../../src/js/handlers/register.mjs"
+      defer
+      type="module"
+    ></script>
     <link
       rel="stylesheet"
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -38,53 +43,52 @@
       <!-- Register form -->
       <div class="row justify-content-around">
         <div class="col-12 col-md-6">
-          <form id="registerForm" method="post" action="/index.html">
-            <fieldset>
-              <div class="mb-3">
-                <label for="">Username</label>
-                <input
-                  pattern="^[\w]+$"
-                  maxlength="20"
-                  required
-                  type="text"
-                  name="name"
-                  title="Username"
-                  class="form-control"
-                  placeholder="Username"
-                  aria-label="First
+          <form id="registerForm" method="post" action="/profile/register/">
+            <div class="mb-3">
+              <label for="">Username</label>
+              <input
+                pattern="^[\w]+$"
+                maxlength="20"
+                required
+                type="text"
+                name="name"
+                title="Username"
+                class="form-control"
+                placeholder="Username"
+                aria-label="First
                 name"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  id="inputEmail"
-                  title="Needs a Noroff email to register"
-                  aria-describedby="emailHelp"
-                  pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-                  required
-                />
-                <div id="emailHelp" class="form-text"></div>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  minlength="8"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="">Avatar</label>
-                <input type="url" name="avatar" class="form-control" />
-              </div>
+              />
+            </div>
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="inputEmail"
+                title="Needs a Noroff email to register"
+                aria-describedby="emailHelp"
+                pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                required
+              />
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                minlength="8"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="">Avatar</label>
+              <input type="url" name="avatar" class="form-control" />
+            </div>
 
-              <button type="submit" class="btn btn-primary">Register</button>
-            </fieldset>
+            <button class="btn btn-primary">Register</button>
           </form>
         </div>
       </div>
