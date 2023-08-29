@@ -11,24 +11,36 @@
   </head>
   <body>
     <header>
-      <div class="row align-items-center">
+      <div
+        class="row align-items-center bg-secondary d-flex justify-content-around"
+      >
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="col search-container">
-          <form class="m-auto" action="">
-            <input type="text" placeholder="Search..." name="search" />
-            <button type="submit"><i class="btn fa fa-search"></i></button>
+        <div class="col search-container d-flex justify-content-center">
+          <form class="d-flex" action="">
+            <input
+              class="form-control me-2 rounded-5"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="rounded-5 btn btn-primary" type="submit">
+              Search
+            </button>
           </form>
         </div>
-        <a class="col active text-center" href="index.html">Bid.com</a>
-        <div class="col row rigth-nav">
-          <form class="col" action="">
+        <a class="col active text-center fs-1" href="index.html">Bid.com</a>
+        <div class="col row rigth-nav d-flex">
+          <form class="col d-flex justify-content-center" action="">
             <div class="btn">
-              <button>Log in</button>
+              <button class="rounded-pill btn btn-primary">Log in</button>
             </div>
           </form>
-          <form class="col" action="/profile/register/index.html">
+          <form
+            class="col d-flex justify-content-center"
+            action="/profile/register/index.html"
+          >
             <div class="btn">
-              <button>Sign in</button>
+              <button class="rounded-5 btn btn-primary">Sign in</button>
             </div>
           </form>
         </div>
