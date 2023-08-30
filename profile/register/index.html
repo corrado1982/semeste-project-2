@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../src/js/index.mjs" defer type="module"></script>
-    <link
-      rel="stylesheet"
-      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Bit.com | Register Page</title>
   </head>
   <body>
@@ -19,7 +16,7 @@
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
-        <a class="active" href="index.html">Bid.com</a>
+        <a class="active" href="/">Bid.com</a>
         <div class="rigth-nav">
           <form action="">
             <div>
@@ -39,6 +36,7 @@
       <!-- Register form -->
       <div class="row justify-content-around">
         <div class="col-12 col-md-6">
+          <div id="message"></div>
           <form id="registerForm">
             <div class="mb-3">
               <label for="">Username</label>
@@ -53,6 +51,7 @@
                 placeholder="Username"
                 aria-label="First
                 name"
+                value="testname"
               />
             </div>
             <div class="mb-3">
@@ -66,6 +65,7 @@
                 aria-describedby="emailHelp"
                 pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
                 required
+                value="testmail@stud.noroff.no"
               />
               <div id="emailHelp" class="form-text"></div>
             </div>
@@ -77,6 +77,7 @@
                 class="form-control"
                 minlength="8"
                 required
+                value="12345678"
               />
             </div>
             <div class="mb-3">
