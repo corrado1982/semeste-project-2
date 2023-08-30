@@ -9,31 +9,47 @@
   </head>
   <body>
     <header>
-      <div class="navigation bg-secondary d-flex justify-content-around">
-        <div class="search-container">
-          <form action="">
-            <input type="text" placeholder="Search..." name="search" />
-            <button type="submit"><i class="fa fa-search"></i></button>
+      <div
+        class="row align-items-center bg-secondary d-flex justify-content-around"
+      >
+        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
+        <div class="col search-container d-flex justify-content-center">
+          <form class="d-flex" action="">
+            <input
+              class="form-control me-2 rounded-5"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="rounded-5 btn btn-primary" type="submit">
+              Search
+            </button>
           </form>
         </div>
-        <a class="active" href="/">Bid.com</a>
-        <div class="rigth-nav">
-          <form action="">
-            <div>
-              <button>Log in</button>
+        <a class="col active text-center fs-1" href="/">Bid.com</a>
+        <div class="col row rigth-nav d-flex">
+          <form class="col d-flex justify-content-end" action="">
+            <div class="btn">
+              <button class="rounded-pill btn btn-primary">Log in</button>
             </div>
           </form>
-          <form action="">
-            <div>
-              <button>Sign in</button>
+          <form
+            class="col d-flex justify-content-center"
+            action="/profile/register"
+          >
+            <div class="btn">
+              <button class="rounded-5 btn btn-primary">Sign in</button>
             </div>
           </form>
         </div>
       </div>
     </header>
     <main>
-      Register Page
       <!-- Register form -->
+      <div class="row">
+        <div class="col-12 text-center">Register</div>
+      </div>
+
       <div class="row justify-content-around">
         <div class="col-12 col-md-6">
           <div id="message"></div>
@@ -85,7 +101,7 @@
               <input type="url" name="avatar" class="form-control" />
             </div>
 
-            <button class="btn btn-primary">Register</button>
+            <button class="btn btn-primary d-flex m-auto">Register</button>
           </form>
         </div>
       </div>
