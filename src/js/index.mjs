@@ -1,3 +1,15 @@
 import { setDataRegisterListener } from "./handlers/register.mjs";
 
-setDataRegisterListener();
+function router() {
+  const path = window.location.pathname;
+
+  console.log(path);
+
+  switch (path) {
+    case "/profile/register/":
+    case "/profile/register/index.html":
+      setDataRegisterListener();
+      break;
+  }
+}
+router();
