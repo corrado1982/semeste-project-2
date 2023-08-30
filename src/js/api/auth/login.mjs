@@ -1,5 +1,5 @@
 import { BASE_URL } from "../constants.mjs";
-import { REGISTER_URL } from "../constants.mjs";
+import { LOGIN_URL } from "../constants.mjs";
 
 const action = LOGIN_URL; //to update
 const method = "post";
@@ -21,5 +21,5 @@ export async function login(profile) {
     return result;
   }
 
-  throw new Error("Registration failed!");
+  throw new Error("Login failed!");
 }

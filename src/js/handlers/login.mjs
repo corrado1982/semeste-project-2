@@ -3,7 +3,7 @@ import displayMessage from "../components/displayMessage.mjs";
 console.log("hello");
 
 export function setDataLoginListener() {
-  const form = document.querySelector("#loginForm"); //to update?
+  const form = document.querySelector("#loginForm");
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -11,16 +11,11 @@ export function setDataLoginListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
-    // console.log(profile);
 
     try {
       const response = await login(profile);
       console.log(response);
-      displayMessage(
-        "success",
-        "you successfully logged. Please Login!",
-        "#message"
-      );
+      displayMessage("success", "you successfully logged!", "#message");
       form.reset();
     } catch (error) {
       displayMessage("danger", error, "#message");
