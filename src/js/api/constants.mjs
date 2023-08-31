@@ -1,5 +1,5 @@
-export const BASE_URL = "https://api.noroff.dev";
+export const BASE_URL = "https://api.noroff.dev/api/v1/auction";
 
-export const REGISTER_URL = "/api/v1/auction/auth/register";
+export const REGISTER_URL = "/auth/register";
 
-export const LOGIN_URL = "/api/v1/auction/auth/login";
+export const LOGIN_URL = "/auth/login";

@@ -1,5 +1,6 @@
 import { BASE_URL } from "../constants.mjs";
 import { LOGIN_URL } from "../constants.mjs";
+import * as storage from "../../storage/index.mjs";
 
 const action = LOGIN_URL; //to update
 const method = "post";
@@ -17,8 +18,12 @@ export async function login(profile) {
   });
 
   if (response.ok) {
-    const result = await response.json();
-    return result;
+    const { accessToken, ...user } = await response.json();
+    storage.save("token", accessToken);
+    storage.save("profile", user);
+    console.log(response);
+    // location.href = "/posts";      //    ----change location-----
+    return;
   }
 
   throw new Error("Login failed!");

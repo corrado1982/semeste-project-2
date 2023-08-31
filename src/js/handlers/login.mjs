@@ -13,8 +13,9 @@ export function setDataLoginListener() {
     const profile = Object.fromEntries(formData.entries());
 
     try {
-      const response = await login(profile);
-      console.log(response);
+      // const response =
+      await login(profile);
+      // console.log(response);
       displayMessage("success", "you successfully logged!", "#message");
       form.reset();
     } catch (error) {
