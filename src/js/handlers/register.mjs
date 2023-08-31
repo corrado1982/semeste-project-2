@@ -22,6 +22,7 @@ export function setDataRegisterListener() {
         "you successfully registered. Please Login!",
         "#message"
       );
+      // call here the login()?
       form.reset();
     } catch (error) {
       displayMessage("danger", error, "#message");
