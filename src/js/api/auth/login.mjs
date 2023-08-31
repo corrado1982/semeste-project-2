@@ -22,7 +22,7 @@ export async function login(profile) {
     storage.save("token", accessToken);
     storage.save("profile", user);
     console.log(response);
-    location.href = "/listing"; //    ----change location-----
+    location.href = "/listings"; //    ----change location-----
     return;
   }
 

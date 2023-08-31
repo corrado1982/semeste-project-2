@@ -8,11 +8,9 @@
   </head>
   <body>
     <header>
-      <div
-        class="row align-items-center bg-secondary d-flex justify-content-around"
-      >
+      <div class="row align-items-center bg-dark d-flex justify-content-around">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="col search-container d-flex justify-content-center">
+        <div class="col-3 search-container d-flex justify-content-center">
           <form class="d-flex" action="">
             <input
               class="form-control me-2 rounded-5"
@@ -20,32 +18,39 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="rounded-5 btn btn-primary" type="submit">
+            <!-- <button class="rounded-5 btn btn-primary" type="submit">
               Search
-            </button>
+            </button> -->
           </form>
         </div>
         <a class="col active text-center fs-1" href="/">Bid.com</a>
-        <div class="col row rigth-nav d-flex">
-          <!-- <form class="col d-flex justify-content-end" action="/profile/login/">
+        <div class="col-1 m-2 text-primary fs-5">Points=1000</div>
+
+        <!-- <form class="col d-flex justify-content-end" action="/profile/login/">
             <div class="btn">
               <button class="rounded-pill btn btn-primary">Log in</button>
             </div>
           </form> -->
-          <!-- LOGOUT BUTTON -->
-          <form
-            class="col d-flex justify-content-center"
-            action="/profile/register"
-          >
+        <!-- LOGOUT BUTTON -->
+        <!-- <form class="col d-flex justify-content-center" action="/">
             <div class="btn">
               <button class="rounded-5 btn btn-primary">Log out</button>
             </div>
-          </form>
+          </form> -->
+        <!-- SELECT MENU -->
+        <div class="col-2 m-2 row rigth-nav d-flex">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Name Here</option>
+            <option value="1">Your Avatar</option>
+            <option value="2">Your Listing</option>
+            <option value="3">Your bidd</option>
+            <option value="4">Logout</option>
+          </select>
         </div>
       </div>
     </header>
     <main>
-      Listing page
+      Listings page
       <div>Some Cards Here</div>
     </main>
     <footer></footer>
