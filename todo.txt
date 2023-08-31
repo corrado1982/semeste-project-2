@@ -1,0 +1,10 @@
+someting to document
+
+
+--- Handle "Tokens"
+-save token to be logged.
+-get token and profile to display on the "header".
+-delete token when logout.
+
+--- Make a function "isLogged"
+-display credits and avatar when isLogged
