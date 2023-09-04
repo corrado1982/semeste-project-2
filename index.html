@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="../src/js/index.mjs" defer type="module"></script>
     <title>Bit.com | start page</title>
   </head>
   <body>
@@ -43,10 +44,13 @@
     </header>
     <main>
       Start page
-      <div>Some Cards Here</div>
+      <div
+        class="row container m-auto d-flex justify-content-around"
+        id="cardsContainer"
+      ></div>
       <!-- CARD -->
       <div class="card" style="width: 18rem">
-        <img src="..." id="itemImage" class="card-img-top" alt="image here" />
+        <!-- <img src="..." id="itemImage" class="card-img-top" alt="image here" /> -->
         <div class="card-body">
           <h5 id="itemTitle" class="card-title">Item 1</h5>
           <div class="row">

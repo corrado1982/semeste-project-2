@@ -1,6 +1,7 @@
 import { setDataRegisterListener } from "./handlers/register.mjs";
 import { setDataLoginListener } from "./handlers/login.mjs";
 import { logoutListener } from "./handlers/logout.mjs";
+import { readListings } from "./api/listing/read.mjs";
 
 function router() {
   const path = window.location.pathname;
@@ -19,6 +20,10 @@ function router() {
     case "/listings/":
     case "/listings/index.html":
       logoutListener();
+      break;
+    case "/":
+    case "/index.html":
+      readListings();
       break;
   }
 }
