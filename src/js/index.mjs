@@ -27,7 +27,7 @@ function router() {
     case "/":
     case "/index.html":
       readListings();
-      readListing();
+      // readListing();
       break;
     case "/listing/":
     case "/listing/index.html":

@@ -79,8 +79,38 @@
       <div
         id="listItem"
         class="row container m-auto d-flex justify-content-around"
-      >
-        Item here
+      ></div>
+      Item card to test here
+      <div class="col-6 m-auto card">
+        <div class="card-body">
+          <div id="card-body"></div>
+          <!-- <img
+            src="${result.media}"
+            id="itemImage"
+            class="card-img-top"
+            alt="image of ${result.title}"
+          /> -->
+          <h5 id="itemTitle" class="card-title">${result.title}</h5>
+          <p id="description"></p>
+          <div class="row">
+            <p class="card-text col-6">Bids</p>
+            <p id="bids" class="card-text col-6 d-flex justify-content-end">
+              1000
+            </p>
+          </div>
+          <div class="row">
+            <p class="card-text col-6">Expiring</p>
+            <p
+              id="remainingTime"
+              class="card-text col-6 d-flex justify-content-end"
+            >
+              ${result.endsAt}
+            </p>
+          </div>
+          <div class="d-grid gap-2 col-3 mx-auto">
+            <a href="#" class="btn btn-primary">Bid Now</a>
+          </div>
+        </div>
       </div>
     </main>
     <footer></footer>
