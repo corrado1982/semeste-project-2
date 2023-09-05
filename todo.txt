@@ -8,3 +8,9 @@ someting to document
 
 --- Make a function "isLogged"
 -display credits and avatar when isLogged
+
+
+--- to Bid ---
+-create a proper detail card in the /listing/ page
+-create a form with the last bid as a placeholder
+-make a function that POST a bid
