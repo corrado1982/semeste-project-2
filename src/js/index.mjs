@@ -3,6 +3,7 @@ import { setDataLoginListener } from "./handlers/login.mjs";
 import { logoutListener } from "./handlers/logout.mjs";
 import { readListings } from "./api/listing/read.mjs";
 import { readListing } from "./api/listing/read.mjs";
+import { bidListener } from "./api/listing/bid.mjs";
 
 function router() {
   const path = window.location.pathname;
@@ -22,16 +23,17 @@ function router() {
     case "/listings/index.html":
       readListings();
       logoutListener();
-      readListing();
+
       break;
     case "/":
     case "/index.html":
       readListings();
-      // readListing();
+
       break;
     case "/listing/":
     case "/listing/index.html":
       readListing();
+      bidListener();
       break;
   }
 }

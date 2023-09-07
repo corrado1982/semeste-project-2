@@ -1,4 +1,5 @@
 import { BASE_URL } from "../constants.mjs";
+import { makeBid } from "./bid.mjs";
 
 //some experiment of populare the form
 const cardTitle = document.querySelector("#itemTitle");
@@ -9,7 +10,7 @@ const cardBidsContainer = document.querySelector("#bid-details");
 // const cardAppendPicture = document.querySelector("#card-body");
 //til here
 
-const itemContainer = document.querySelector("#listItem");
+// const itemContainer = document.querySelector("#listItem");
 const cardsContainer = document.querySelector("#cardsContainer");
 
 const bidsUrl = "?_bids=true";
@@ -22,8 +23,8 @@ export async function readListings() {
   //   console.log(result);
 
   result.forEach((element) => {
-    console.log(element);
-    console.log(element._count.bids);
+    // console.log(element);
+    // console.log(element._count.bids);
 
     cardsContainer.innerHTML += `
     <div  class="col-6 m-5 card" style="width: 18rem">
@@ -67,14 +68,14 @@ export async function readListing() {
 
   result.bids.forEach((bidDetail) => {
     console.log(bidDetail.bidderName);
-    console.log(bidDetail.amount);
+
     cardBidsContainer.innerHTML += `
     <div class="d-flex justify-content-between">
     <p>${bidDetail.bidderName}</p>
     <p>${bidDetail.amount}</p>
     </div>`;
   });
-  console.log(id);
+  // console.log(id);
   console.log(result);
   console.log(result.bids);
   //prove da qui
@@ -95,6 +96,7 @@ export async function readListing() {
   const src = document.getElementById("card-body");
 
   src.appendChild(img);
+  //prova bid
 
   //fino qui
   //   itemContainer.innerHTML = `
