@@ -92,21 +92,25 @@
           /> -->
           <h5 id="itemTitle" class="card-title">${result.title}</h5>
           <p id="description"></p>
-          <div class="row">
-            <p class="card-text col-6">Bids</p>
-            <p id="bids" class="card-text col-6 d-flex justify-content-end">
-              1000
-            </p>
-          </div>
-          <div class="row">
-            <p class="card-text col-6">Expiring</p>
+          <div class="d-flex justify-content-between flex-wrap">
+            <p class="card-text">Expiring</p>
             <p
               id="remainingTime"
-              class="card-text col-6 d-flex justify-content-end"
-            >
-              ${result.endsAt}
-            </p>
+              class="card-text d-flex justify-content-end"
+            ></p>
           </div>
+
+          <div class="d-flex justify-content-between flex-wrap">
+            <p class="card-text">Bids</p>
+            <p id="bids" class="card-text d-flex"></p>
+          </div>
+          <hr />
+          <div class="d-flex justify-content-between flex-wrap">
+            <p class="card-text">Bidder</p>
+            <p id="bids" class="card-text d-flex">Amount</p>
+          </div>
+          <hr />
+          <div id="bid-details"></div>
           <div class="d-grid gap-2 col-3 mx-auto">
             <a href="#" class="btn btn-primary">Bid Now</a>
           </div>
