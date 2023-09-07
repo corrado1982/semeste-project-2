@@ -2,9 +2,9 @@ someting to document
 
 
 --- Handle "Tokens"
--save token to be logged.
+//-save token to be logged.
 -get token and profile to display on the "nav".
--delete token when logout.
+//-delete token when logout.
 
 --- Make a function "isLogged"
 -display credits and avatar when isLogged
