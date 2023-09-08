@@ -3,6 +3,7 @@ import { setDataLoginListener } from "./handlers/login.mjs";
 import { logoutListener } from "./handlers/logout.mjs";
 import { readListings } from "./api/listing/read.mjs";
 import { readListing } from "./api/listing/read.mjs";
+import { populateNavigation } from "./components/populateNav.mjs";
 // import { bidListener } from "./api/listing/read.mjs";
 
 function router() {
@@ -23,6 +24,7 @@ function router() {
     case "/listings/index.html":
       readListings();
       logoutListener();
+      populateNavigation();
 
       break;
     case "/":
