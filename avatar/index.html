@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../src/js/index.mjs" defer type="module"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Bit.com | Avatar Page</title>
+  </head>
+  <body>
+    <header>
+      <div class="row align-items-center bg-dark d-flex justify-content-around">
+        <div class="col search-container d-flex justify-content-center">
+          <form class="d-flex" action="">
+            <input
+              class="form-control me-2 rounded-5"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="rounded-5 btn btn-primary" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <a class="col active text-center fs-1" href="/">Bid.com</a>
+        <div class="col row rigth-nav d-flex">
+          <form class="col d-flex justify-content-end" action="">
+            <div class="btn">
+              <button class="rounded-pill btn btn-primary">Log in</button>
+            </div>
+          </form>
+          <form
+            class="col d-flex justify-content-center"
+            action="/profile/register"
+          >
+            <div class="btn">
+              <button class="rounded-5 btn btn-primary">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Avatar form -->
+      <div class="row">
+        <div class="col-12 text-center">Avatar</div>
+      </div>
+
+      <div class="row justify-content-around">
+        <div class="col-12 col-md-6">
+          <div id="message"></div>
+          <form id="avatar-form">
+            <div class="mb-3">
+              <label for="avatar" class="form-label">Avatar URL</label>
+              <input name="avatar" type="url" class="form-control" required />
+            </div>
+
+            <button class="btn btn-primary d-flex m-auto">Upload Avatar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

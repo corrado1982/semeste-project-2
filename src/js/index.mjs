@@ -4,6 +4,8 @@ import { logoutListener } from "./handlers/logout.mjs";
 import { readListings } from "./api/listing/read.mjs";
 import { readListing } from "./api/listing/read.mjs";
 import { populateNavigation } from "./components/populateNav.mjs";
+import { setAvatarListener } from "./handlers/avatar.mjs";
+// import { updateAvatar } from "./handlers/avatar.mjs";
 // import { bidListener } from "./api/listing/read.mjs";
 
 function router() {
@@ -37,6 +39,9 @@ function router() {
       readListing();
       // bidListener();
       break;
+    case "/avatar/":
+    case "/avatar/index.html":
+      setAvatarListener();
   }
 }
 router();
