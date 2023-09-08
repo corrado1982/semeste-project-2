@@ -10,26 +10,28 @@ const id = params.get("id");
 const token = storage.load("token");
 console.log(token);
 // const method = "post";
-// const body = 1;
-export async function makeBid() {
-  // bidButton.addEventListener("click",)
+const method = "post";
+// const body = JSON.stringify({ amount: newBid }); //new bid
+
+export async function makeBid(bid) {
+  //pass new bid ?
   const bidUrl = BASE_URL + "/listings/" + id + "/bids";
 
   const response = await fetch(bidUrl, {
-    method: "POST",
-    body: JSON.stringify({
-      amount: 1,
-    }),
+    method,
+    body: JSON.stringify({ amount: bid }),
     headers: {
       "Content-type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
   console.log(response);
+  location.reload();
+  //   console.log(body);
 }
-const bidButton = document.querySelector("#bid-button");
-export function bidListener() {
-  bidButton.addEventListener("click", () => {
-    makeBid();
-  });
-}
+// const bidButton = document.querySelector("#bid-button");
+// export async function bidListener() {
+//   bidButton.addEventListener("click", () => {
+//     makeBid();
+//   });
+// }

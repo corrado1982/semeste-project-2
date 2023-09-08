@@ -67,7 +67,7 @@ export async function readListing() {
   const result = await response.json();
 
   result.bids.forEach((bidDetail) => {
-    console.log(bidDetail.bidderName);
+    console.log(bidDetail.amount);
 
     cardBidsContainer.innerHTML += `
     <div class="d-flex justify-content-between">
@@ -77,8 +77,24 @@ export async function readListing() {
   });
   // console.log(id);
   console.log(result);
+
   console.log(result.bids);
+  const firstBidIndex = result.bids[0];
+  const lastBidIndex = result.bids[result.bids.length - 1];
+  let lastBid = lastBidIndex.amount;
+  console.log(firstBidIndex);
+  console.log(lastBidIndex);
+  console.log(lastBid);
   //prove da qui
+
+  console.log(lastBid);
+  const bidButton = document.querySelector("#bid-button");
+  const newBid = lastBid + 1;
+  bidButton.addEventListener("click", () => {
+    makeBid(newBid); // new bid = last index + 1
+
+    console.log(newBid);
+  });
 
   cardTitle.innerHTML = `${result.title}`;
   cardBids.innerHTML = `${result._count.bids}`;
@@ -96,7 +112,6 @@ export async function readListing() {
   const src = document.getElementById("card-body");
 
   src.appendChild(img);
-  //prova bid
 
   //fino qui
   //   itemContainer.innerHTML = `
@@ -140,3 +155,11 @@ export async function readListing() {
   //           </div>
   //       `;
 }
+//prova bid
+// console.log(lastBid);
+// const bidButton = document.querySelector("#bid-button");
+// export async function bidListener() {
+//   bidButton.addEventListener("click", () => {
+//     makeBid(newBid); // new bid = last index + 1
+//   });
+// }
