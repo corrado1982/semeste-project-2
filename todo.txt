@@ -1,5 +1,7 @@
 someting to document
 
+---should log out also from other pages
+
 
 --- Handle "Tokens"
 //-save token to be logged.
