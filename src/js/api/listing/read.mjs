@@ -13,12 +13,13 @@ const cardBidsContainer = document.querySelector("#bid-details");
 // const itemContainer = document.querySelector("#listItem");
 const cardsContainer = document.querySelector("#cardsContainer");
 
+const displayActive = "&_active=true";
 const bidsUrl = "?_bids=true";
 const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
 export async function readListings() {
-  const response = await fetch(listingsUrl + bidsUrl);
+  const response = await fetch(listingsUrl + bidsUrl + displayActive);
   const result = await response.json();
   //   console.log(result);
 
@@ -66,34 +67,33 @@ export async function readListing() {
   const response = await fetch(listingsUrl + id + bidsUrl);
   const result = await response.json();
 
-  result.bids.forEach((bidDetail) => {
-    console.log(bidDetail.amount);
+  // result.bids.forEach((bidDetail) => {
+  //   console.log(bidDetail.amount);
 
-    cardBidsContainer.innerHTML += `
-    <div class="d-flex justify-content-between">
-    <p>${bidDetail.bidderName}</p>
-    <p>${bidDetail.amount}</p>
-    </div>`;
-  });
+  //   cardBidsContainer.innerHTML += `
+  //   <div class="d-flex justify-content-between">
+  //   <p>${bidDetail.bidderName}</p>
+  //   <p>${bidDetail.amount}</p>
+  //   </div>`;
+  // });
   // console.log(id);
   console.log(result);
 
   console.log(result.bids);
-  const firstBidIndex = result.bids[0];
+  // const firstBidIndex = result.bids[0];
   const lastBidIndex = result.bids[result.bids.length - 1];
   let lastBid = lastBidIndex.amount;
-  console.log(firstBidIndex);
-  console.log(lastBidIndex);
+  // console.log(firstBidIndex);
+  // console.log(lastBidIndex);
   console.log(lastBid);
   //prove da qui
 
-  console.log(lastBid);
   const bidButton = document.querySelector("#bid-button");
   const newBid = lastBid + 1;
   bidButton.addEventListener("click", () => {
     makeBid(newBid); // new bid = last index + 1
 
-    console.log(newBid);
+    // console.log(newBid);
   });
 
   cardTitle.innerHTML = `${result.title}`;

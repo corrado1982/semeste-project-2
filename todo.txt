@@ -11,6 +11,7 @@ someting to document
 --- Make a function "isLogged"
 -display credits and avatar when isLogged
 
+Populate item card with name and avatar of the owner?
 
 --- to Bid ---
 -create a proper detail card in the /listing/ page
@@ -25,5 +26,5 @@ X A registered user may update their avatar
 X A registered user may view their total credit
 --A registered user may create a Listing with a title, deadline date, media gallery and description
 X A registered user may add a Bid to another user’s Listing
---A registered user may view Bids made on a Listing
+X A registered user may view Bids made on a Listing
 -An unregistered user may search through Listings
