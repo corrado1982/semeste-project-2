@@ -45,3 +45,18 @@ function router() {
   }
 }
 router();
+
+// const year = 2003;
+// const monthIndex = 5;
+// const day = 1;
+// const hours = 14;
+// const minutes = 34;
+// const seconds = 22;
+// const ms = 0;
+// const milliseconds = 23;
+
+// const newDate = new Date(year, monthIndex, day, hours, minutes, seconds, ms);
+
+// console.log(newDate);
+
+// console.log(new Date(day));
