@@ -31,7 +31,7 @@ export async function readListings() {
     <div  class="col-6 m-5 card" style="width: 18rem">
         
           <div class="card-body">
-          <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image here" />
+          <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
             <h5 id="itemTitle" class="card-title">${element.title}</h5>
             <div class="row">
               <p class="card-text col-6">Bids</p>
@@ -67,43 +67,43 @@ export async function readListing() {
   const response = await fetch(listingsUrl + id + bidsUrl);
   const result = await response.json();
 
-  // result.bids.forEach((bidDetail) => {
-  //   console.log(bidDetail.amount);
+  result.bids.forEach((bidDetail) => {
+    console.log(bidDetail.amount);
 
-  //   cardBidsContainer.innerHTML += `
-  //   <div class="d-flex justify-content-between">
-  //   <p>${bidDetail.bidderName}</p>
-  //   <p>${bidDetail.amount}</p>
-  //   </div>`;
-  // });
-  // console.log(id);
+    cardBidsContainer.innerHTML += `
+    <div class="d-flex justify-content-between">
+    <p>${bidDetail.bidderName}</p>
+    <p>${bidDetail.amount}</p>
+    </div>`;
+  });
+  console.log(id);
   console.log(result);
 
-  console.log(result.bids);
+  // console.log(result.bids);
   // const firstBidIndex = result.bids[0];
-  const lastBidIndex = result.bids[result.bids.length - 1];
-  let lastBid = lastBidIndex.amount;
-  // console.log(firstBidIndex);
-  // console.log(lastBidIndex);
+  console.log(result.bids.length);
+  if (result.bids.length === 0) {
+    var lastBid = 0;
+  } else if (result.bids.length > 0) {
+    const lastBidIndex = result.bids[result.bids.length - 1];
+    lastBid = lastBidIndex.amount;
+  }
   console.log(lastBid);
+
   //prove da qui
 
   const bidButton = document.querySelector("#bid-button");
   const newBid = lastBid + 1;
   bidButton.addEventListener("click", () => {
-    makeBid(newBid); // new bid = last index + 1
-
-    // console.log(newBid);
+    makeBid(newBid);
   });
 
   cardTitle.innerHTML = `${result.title}`;
-  cardBids.innerHTML = `${result._count.bids}`;
   cardExpire.innerHTML = `${result.endsAt}`;
+  cardBids.innerHTML = `${result._count.bids}`;
   cardDescription.innerHTML = `${result.description}`;
 
-  // cardAppendPicture.append(result.media[0]);
   const img = document.createElement("img");
-  //   .classList.add("card-img-top");
 
   img.src = result.media[0];
   img.className = "card-img-top";
@@ -112,6 +112,7 @@ export async function readListing() {
   const src = document.getElementById("card-body");
 
   src.appendChild(img);
+  // }
 
   //fino qui
   //   itemContainer.innerHTML = `
