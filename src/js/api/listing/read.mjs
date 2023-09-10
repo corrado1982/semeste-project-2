@@ -1,5 +1,5 @@
 import { BASE_URL } from "../constants.mjs";
-import { makeBid } from "./bid.mjs";
+// import { makeBid } from "./bid.mjs";
 
 //some experiment of populare the form
 const cardTitle = document.querySelector("#itemTitle");
@@ -61,7 +61,6 @@ export async function readListings() {
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-// const id = "dc4b2b25-c51a-4e76-a334-148d4af9f8e2";
 
 export async function readListing() {
   const response = await fetch(listingsUrl + id + bidsUrl);
@@ -76,27 +75,7 @@ export async function readListing() {
     <p>${bidDetail.amount}</p>
     </div>`;
   });
-  console.log(id);
-  console.log(result);
-
-  // console.log(result.bids);
-  // const firstBidIndex = result.bids[0];
-  console.log(result.bids.length);
-  if (result.bids.length === 0) {
-    var lastBid = 0;
-  } else if (result.bids.length > 0) {
-    const lastBidIndex = result.bids[result.bids.length - 1];
-    lastBid = lastBidIndex.amount;
-  }
-  console.log(lastBid);
-
-  //prove da qui
-
-  const bidButton = document.querySelector("#bid-button");
-  const newBid = lastBid + 1;
-  bidButton.addEventListener("click", () => {
-    makeBid(newBid);
-  });
+  // here event
 
   cardTitle.innerHTML = `${result.title}`;
   cardExpire.innerHTML = `${result.endsAt}`;
@@ -112,55 +91,4 @@ export async function readListing() {
   const src = document.getElementById("card-body");
 
   src.appendChild(img);
-  // }
-
-  //fino qui
-  //   itemContainer.innerHTML = `
-  //     <div  class="col-6 m-auto card">
-
-  //             <div class="card-body">
-  //             <img src="${result.media[0]}" id="itemImage" class="card-img-top" alt="image of ${result.title}" />
-  //               <h5 id="itemTitle" class="card-title">${result.title}</h5>
-
-  //               <div class="row">
-  //                 <p class="card-text col-6">Expiring</p>
-  //                 <p
-  //                   id="remainingTime"
-  //                   class="card-text col-6 d-flex justify-content-end"
-  //                 >
-  //                 ${result.endsAt}
-  //                 </p>
-  //               </div>
-  //               <div class="row">
-  //                 <p class="card-text col-6">Bids</p>
-  //                 <p
-  //                   id="actualPrice"
-  //                   class="card-text col-6 d-flex justify-content-end"
-  //                 >
-  //                 ${result._count.bids}
-  //                 </p>
-  //               </div>
-  //               <div class="row">
-  //                 <p class="card-text col-6">Bid Amount</p>
-  //                 <p
-  //                   id="actualPrice"
-  //                   class="card-text col-6 d-flex justify-content-end"
-  //                 >
-  //                 Amount
-  //                 </p>
-  //               </div>
-  //               <div class="d-grid gap-2 col-3 mx-auto">
-  //               <a href="#" class="btn btn-primary">Bid Now</a>
-  //             </div>
-  //             </div>
-  //           </div>
-  //       `;
 }
-//prova bid
-// console.log(lastBid);
-// const bidButton = document.querySelector("#bid-button");
-// export async function bidListener() {
-//   bidButton.addEventListener("click", () => {
-//     makeBid(newBid); // new bid = last index + 1
-//   });
-// }

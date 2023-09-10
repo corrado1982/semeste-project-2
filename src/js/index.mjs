@@ -6,7 +6,7 @@ import { readListing } from "./api/listing/read.mjs";
 import { populateNavigation } from "./components/populateNav.mjs";
 import { setAvatarListener } from "./handlers/avatar.mjs";
 // import { updateAvatar } from "./handlers/avatar.mjs";
-// import { bidListener } from "./api/listing/read.mjs";
+import { bidListener } from "./handlers/bid.mjs";
 
 function router() {
   const path = window.location.pathname;
@@ -37,7 +37,7 @@ function router() {
     case "/listing/":
     case "/listing/index.html":
       readListing();
-      // bidListener();
+      bidListener();
       break;
     case "/avatar/":
     case "/avatar/index.html":
