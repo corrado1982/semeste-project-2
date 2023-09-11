@@ -51,11 +51,10 @@
       <div class="row justify-content-around">
         <div class="col-12 col-md-6">
           <div id="message"></div>
-          <form id="registerForm">
+          <form id="createForm">
             <div class="mb-3">
               <label for="">Title</label>
               <input
-                pattern="^[\w]+$"
                 maxlength="20"
                 required
                 title="Needs a title"
@@ -87,8 +86,8 @@
               <input name="media" type="url" class="form-control" />
             </div>
             <div class="mb-3">
-              <label for="ends" class="form-label">Ends At</label>
-              <input name="ends" type="datetime-local" class="form-control" />
+              <label for="endsAt" class="form-label">Ends At</label>
+              <input name="endsAt" type="datetime-local" class="form-control" />
             </div>
 
             <button class="btn btn-primary d-flex m-auto">Create</button>

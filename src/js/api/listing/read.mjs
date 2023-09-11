@@ -19,9 +19,7 @@ const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
 export async function readListings() {
-  const response = await fetch(
-    listingsUrl + bidsUrl + displayActive + "&_seller=true"
-  );
+  const response = await fetch(listingsUrl + bidsUrl + "&_seller=true");
   const result = await response.json();
   console.log(result);
 

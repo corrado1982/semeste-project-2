@@ -7,6 +7,9 @@ import { populateNavigation } from "./components/populateNav.mjs";
 import { setAvatarListener } from "./handlers/avatar.mjs";
 // import { updateAvatar } from "./handlers/avatar.mjs";
 import { bidListener } from "./handlers/bid.mjs";
+// import { create } from "./api/auth/create.mjs";
+import { remove } from "./api/auth/delete.mjs"; // REMOVE LISTENER TO BE MADE
+import { createListener } from "./handlers/create.mjs";
 
 function router() {
   const path = window.location.pathname;
@@ -38,10 +41,16 @@ function router() {
     case "/listing/index.html":
       readListing();
       bidListener();
+      remove();
       break;
     case "/avatar/":
     case "/avatar/index.html":
       setAvatarListener();
+      break;
+    case "/listing/create/":
+    case "/listing/create/index.html":
+      createListener();
+      break;
   }
 }
 router();
