@@ -19,9 +19,11 @@ const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
 export async function readListings() {
-  const response = await fetch(listingsUrl + bidsUrl + displayActive);
+  const response = await fetch(
+    listingsUrl + bidsUrl + displayActive + "&_seller=true"
+  );
   const result = await response.json();
-  //   console.log(result);
+  console.log(result);
 
   result.forEach((element) => {
     // console.log(element);
@@ -29,6 +31,11 @@ export async function readListings() {
 
     cardsContainer.innerHTML += `
     <div  class="col-6 m-5 card" style="width: 18rem">
+
+      <p id="seller-name" class="card-text"
+          >by: ${element.seller.name}
+          <img src="${element.seller.avatar}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
+      </p>
         
           <div class="card-body">
           <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
@@ -63,11 +70,11 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 export async function readListing() {
-  const response = await fetch(listingsUrl + id + bidsUrl);
+  const response = await fetch(listingsUrl + id + bidsUrl + "&_seller=true");
   const result = await response.json();
 
   result.bids.forEach((bidDetail) => {
-    console.log(bidDetail.amount);
+    // console.log(bidDetail);
 
     cardBidsContainer.innerHTML += `
     <div class="d-flex justify-content-between">
@@ -76,7 +83,7 @@ export async function readListing() {
     </div>`;
   });
   // here event
-
+  console.log(result);
   cardTitle.innerHTML = `${result.title}`;
   cardExpire.innerHTML = `${result.endsAt}`;
   cardBids.innerHTML = `${result._count.bids}`;

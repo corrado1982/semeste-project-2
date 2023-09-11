@@ -2,14 +2,13 @@ import { BASE_URL } from "../api/constants.mjs";
 import * as storage from "../storage/index.mjs";
 
 const method = "put";
-// const body = JSON.stringify({ avatarUrl });
+
 export async function updateAvatar(avatarUrl) {
   const body = JSON.stringify(avatarUrl);
   const token = storage.load("token");
   const profile = storage.load("profile");
   const userName = profile.name;
-  //   console.log(token);
-  //   console.log(profile);
+
   const avatarRequest = BASE_URL + "/profiles/" + userName + "/media";
 
   const response = await fetch(avatarRequest, {

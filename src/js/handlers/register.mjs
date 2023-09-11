@@ -12,7 +12,7 @@ export function setDataRegisterListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
-    // console.log(profile);
+    console.log(profile);
 
     try {
       const response = await register(profile);

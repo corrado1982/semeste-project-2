@@ -11,7 +11,7 @@ export function setDataLoginListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
-
+    console.log(profile);
     try {
       // const response =
       await login(profile);
