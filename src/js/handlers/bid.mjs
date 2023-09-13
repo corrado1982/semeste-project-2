@@ -24,7 +24,7 @@ export async function bidListener() {
   console.log(lastBid);
 
   const bidButton = document.querySelector("#bid-button");
-  const newBid = lastBid + 1;
+  const newBid = lastBid + 1; // + modal result?
   bidButton.addEventListener("click", () => {
     makeBid(newBid);
   });
