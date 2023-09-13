@@ -56,7 +56,7 @@ export async function readListings() {
               ${element.endsAt}
               </p>
             </div>
-            <a href="/listing/index.html?id=${element.id}" class="btn btn-primary">Bid Now</a>
+            <a href="/listing/index.html?id=${element.id}" class="btn btn-primary">See details</a>
           </div>
         </div>
     `;
