@@ -56,7 +56,35 @@ export async function readListings() {
               ${element.endsAt}
               </p>
             </div>
-            <a href="/listing/index.html?id=${element.id}" class="btn btn-primary">See details</a>
+
+            <!-- Modal button-->
+            <div class="d-flex justify-content-center">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            See detail
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  To see details please <a href="/profile/login/">login</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+           
           </div>
         </div>
     `;
