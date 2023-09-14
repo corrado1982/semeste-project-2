@@ -16,7 +16,7 @@ export function redirectBasedOnLogin(path) {
       path !== "/profile/login/" &&
       path !== "/profile/register/"
     ) {
-      location.href = "/";
+      location.href = "/profile/login/";
     }
   }
 }
