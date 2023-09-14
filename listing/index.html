@@ -25,30 +25,15 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <!-- <button class="rounded-5 btn btn-primary" type="submit">
-              Search
-            </button> -->
           </form>
         </div>
         <a class="p-0 col-6 active text-center fs-1" href="/">Bid.com</a>
         <div class="col row">
           <div class="col p-0 text-primary fs-6">Points=</div>
-          <p id="points" class="d-flex m-auto col text-secondary">1000</p>
+          <p id="points" class="d-flex m-auto col text-secondary"></p>
         </div>
-
-        <!-- <form class="col d-flex justify-content-end" action="/profile/login/">
-            <div class="btn">
-              <button class="rounded-pill btn btn-primary">Log in</button>
-            </div>
-          </form> -->
-        <!-- LOGOUT BUTTON -->
-        <!-- <form class="col d-flex justify-content-center" action="/">
-            <div class="btn">
-              <button class="rounded-5 btn btn-primary">Log out</button>
-            </div>
-          </form> -->
-        <!-- SELECT MENU -->
-        <div class="col-2 row p-0 rigth-nav d-flex">
+        <div id="image-avatar" class="col-1 row"></div>
+        <div class="col-1 row p-0 rigth-nav d-flex">
           <div class="dropdown">
             <button
               id="loggedName"
@@ -57,20 +42,23 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Name Here
+              Append Name Here
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Avatar</a></li>
-              <li><a class="dropdown-item" href="#">Your Listing</a></li>
+              <li>
+                <a class="dropdown-item" href="../avatar/index.html">Avatar</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../listing/create/index.html"
+                  >Your Listing</a
+                >
+              </li>
               <li><a class="dropdown-item" href="#">Your Bid</a></li>
               <li>
                 <a id="logOutButton" class="dropdown-item" href="/">Log out</a>
               </li>
             </ul>
           </div>
-          <!-- <a value="4" id="logOutButton" href="/profile/login/index.html"
-            >Loggeout</a
-          > -->
         </div>
       </div>
     </header>

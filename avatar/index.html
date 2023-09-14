@@ -3,41 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <script src="../../src/js/index.mjs" defer type="module"></script>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Bit.com | Avatar Page</title>
   </head>
   <body>
     <header>
-      <div class="row align-items-center bg-dark d-flex justify-content-around">
-        <div class="col search-container d-flex justify-content-center">
+      <div class="row align-items-center bg-dark d-flex">
+        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
+        <div class="p-0 col-3 search-container d-flex justify-content-center">
           <form class="d-flex" action="">
             <input
-              class="form-control me-2 rounded-5"
+              class="form-control rounded-5"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="rounded-5 btn btn-primary" type="submit">
-              Search
-            </button>
           </form>
         </div>
-        <a class="col active text-center fs-1" href="/">Bid.com</a>
-        <div class="col row rigth-nav d-flex">
-          <form class="col d-flex justify-content-end" action="">
-            <div class="btn">
-              <button class="rounded-pill btn btn-primary">Log in</button>
-            </div>
-          </form>
-          <form
-            class="col d-flex justify-content-center"
-            action="/profile/register"
-          >
-            <div class="btn">
-              <button class="rounded-5 btn btn-primary">Sign in</button>
-            </div>
-          </form>
+        <a class="p-0 col-6 active text-center fs-1" href="/">Bid.com</a>
+        <div class="col row">
+          <div class="col p-0 text-primary fs-6">Points=</div>
+          <p id="points" class="d-flex m-auto col text-secondary"></p>
+        </div>
+        <div id="image-avatar" class="col-1 row"></div>
+        <div class="col-1 row p-0 rigth-nav d-flex">
+          <div class="dropdown">
+            <button
+              id="loggedName"
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Append Name Here
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="../avatar/index.html">Avatar</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="../listing/create/index.html"
+                  >Your Listing</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="#">Your Bid</a></li>
+              <li>
+                <a id="logOutButton" class="dropdown-item" href="/">Log out</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -62,5 +83,10 @@
       </div>
     </main>
     <footer></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
