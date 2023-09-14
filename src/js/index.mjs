@@ -3,7 +3,7 @@ import { setDataLoginListener } from "./handlers/login.mjs";
 import { logoutListener } from "./handlers/logout.mjs";
 import { readListings } from "./api/listing/read.mjs";
 import { readListing } from "./api/listing/read.mjs";
-import { populateNavigation } from "./components/populateNav.mjs";
+// import { populateNavigation } from "./components/populateNav.mjs";
 import { setAvatarListener } from "./handlers/avatar.mjs";
 // import { updateAvatar } from "./handlers/avatar.mjs";
 import { bidListener } from "./handlers/bid.mjs";
@@ -29,7 +29,7 @@ function router() {
     case "/listings/index.html":
       readListings();
       logoutListener();
-      populateNavigation();
+      // populateNavigation();
 
       break;
     case "/":
