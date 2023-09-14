@@ -11,6 +11,8 @@ import { bidListener } from "./handlers/bid.mjs";
 import { remove } from "./api/auth/delete.mjs"; // REMOVE LISTENER TO BE MADE
 import { createListener } from "./handlers/create.mjs";
 
+import { redirectBasedOnLogin } from "./api/helpers/auth.mjs";
+const path = window.location.pathname;
 function router() {
   const path = window.location.pathname;
 
@@ -54,7 +56,7 @@ function router() {
   }
 }
 router();
-
+redirectBasedOnLogin(path);
 // const year = 2003;
 // const monthIndex = 5;
 // const day = 1;
