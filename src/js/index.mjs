@@ -55,8 +55,9 @@ function router() {
       break;
   }
 }
-router();
 redirectBasedOnLogin(path);
+router();
+// redirectBasedOnLogin(path);
 // const year = 2003;
 // const monthIndex = 5;
 // const day = 1;
