@@ -32,7 +32,7 @@ X A registered user may view Bids made on a Listing
 --Make functionality of SEARCH 
 --Move thru PAGES 
 --Make REMOVE item 
---REDIRECT page based on login 
++ REDIRECT page based on login 
 --Make a MODAL for NUMBERS OF BID 
 --Is it possible to make expiry date previous date? 
 --Update font 
