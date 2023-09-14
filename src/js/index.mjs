@@ -43,15 +43,18 @@ function router() {
     case "/listing/index.html":
       readListing();
       bidListener();
+      populateNavigation();
       remove();
       break;
     case "/avatar/":
     case "/avatar/index.html":
       setAvatarListener();
+      populateNavigation();
       break;
     case "/listing/create/":
     case "/listing/create/index.html":
       createListener();
+      populateNavigation();
       break;
   }
 }
