@@ -10,7 +10,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+
     <script src="../src/js/index.mjs" defer type="module"></script>
+    <script src="/src/js/components/filter.js" defer type="module"></script>
     <title>Bit.com | start page</title>
   </head>
   <body>
@@ -18,17 +20,16 @@
       <div class="row align-items-center bg-dark d-flex justify-content-around">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
         <div class="col search-container d-flex justify-content-center">
-          <form class="d-flex" action="">
-            <input
-              class="form-control me-2 rounded-5"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <!-- <button class="rounded-5 btn btn-primary" type="submit">
+          <input
+            id="search-imput"
+            class="form-control me-2 rounded-5"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <!-- <button class="rounded-5 btn btn-primary" type="submit">
               Search
             </button> -->
-          </form>
         </div>
         <a class="col active text-center fs-1" href="/">Bid.com</a>
         <div class="col row rigth-nav d-flex">

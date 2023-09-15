@@ -28,7 +28,7 @@ export async function readListings() {
     // console.log(element._count.bids);
 
     cardsContainer.innerHTML += `
-    <div  class="col-6 m-5 card" style="width: 18rem">
+    <div id="card" class="col-6 m-5 card" style="width: 18rem">
 
       <p id="seller-name" class="card-text"
           >by: ${element.seller.name}
