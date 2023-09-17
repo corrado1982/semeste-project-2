@@ -27,9 +27,9 @@ X A registered user may view their total credit
 X A registered user may create a Listing with a title, deadline date, media gallery and description
 X A registered user may add a Bid to another user’s Listing
 X A registered user may view Bids made on a Listing
--An unregistered user may search through Listings
+X An unregistered user may search through Listings
 
---Make functionality of SEARCH 
+-Make functionality of SEARCH 
 --Move thru PAGES 
 --Make REMOVE item 
 + REDIRECT page based on login 

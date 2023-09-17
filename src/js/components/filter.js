@@ -1,6 +1,7 @@
 const searchImput = document.getElementById("search-imput");
 const listingCards = document.getElementsByClassName("card");
 console.log("filter");
+
 const searchListing = () => {
   const searchTerm = searchImput.value.toLowerCase();
   console.log(searchTerm);
