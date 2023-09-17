@@ -11,30 +11,36 @@
     />
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script src="../src/js/index.mjs" defer type="module"></script>
+
+    <script src="../src/js/components/filter.js" defer type="module"></script>
     <title>Bit.com | start page</title>
   </head>
   <body>
     <header>
       <div class="row align-items-center bg-dark d-flex">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="p-0 col-3 search-container d-flex justify-content-center">
-          <form class="d-flex" action="">
-            <input
-              id="search-input"
+        <!-- <div class="p-0 col-3 search-container d-flex justify-content-center"> -->
+        <!-- SEARCH INPUT -->
+        <!-- <input
+              id="search-imput"
               class="form-control rounded-5"
               type="text"
               placeholder="Search"
               aria-label="Search"
-            />
-          </form>
-        </div>
-        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
-          >Bid.com</a
-        >
-        <div class="col row">
+            /> -->
+        <!-- </div> -->
+        <div class="col-3 m-1 row">
           <div class="col p-0 text-primary fs-6">Points=</div>
           <p id="points" class="d-flex m-auto col text-secondary"></p>
         </div>
+
+        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
+          >Bid.com</a
+        >
+        <!-- <div class="col row">
+          <div class="col p-0 text-primary fs-6">Points=</div>
+          <p id="points" class="d-flex m-auto col text-secondary"></p>
+        </div> -->
         <div id="image-avatar" class="col-1 row"></div>
         <div class="col-1 row p-0 rigth-nav d-flex">
           <div class="dropdown">
@@ -66,7 +72,25 @@
       </div>
     </header>
     <main>
-      Listings page
+      <!-- SEARCH INPUT -->
+      <div class="col-3 m-5">
+        <input
+          id="search-imput"
+          class="form-control rounded-5"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <!-- FILTER ACTIVE -->
+        <!-- <select
+          id="filter-active"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option class="isActive" value="1">See All</option>
+          <option class="isActive" value="2">Only Active</option>
+        </select> -->
+      </div>
       <div
         class="row container m-auto d-flex justify-content-around"
         id="cardsContainer"
