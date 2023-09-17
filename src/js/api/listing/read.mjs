@@ -13,13 +13,50 @@ const cardBidsContainer = document.querySelector("#bid-details");
 // const itemContainer = document.querySelector("#listItem");
 const cardsContainer = document.querySelector("#cardsContainer");
 
+// "&_active=true"
+// let isItActive = "";
 const displayActive = "&_active=true";
 const bidsUrl = "?_bids=true";
 const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
+const filterActive = document.querySelector("#filter-active");
+
+// const filterClass = document.getElementsByClassName("isActive");
+// console.log(filterActive.value);
+// filterActive.addEventListener("click", () => {
+//   // location.reload();
+// console.log(filterActive.value);
+// if (filterActive.value === 2) {
+//   isItActive = "&_active=true";
+// } //else if (filterActive.value === 1) {
+//isItActive = "";
+//}
+// console.log(isItActive);
+// });
+
+// console.log(filterActive.value);
+// console.log(filterClass.value);
+// if (filterActive.value === 2) {
+//   displayActive === "&_active=true";
+// }
+
 export async function readListings() {
-  const response = await fetch(listingsUrl + bidsUrl + "&_seller=true");
+  const response = await fetch(
+    listingsUrl + bidsUrl + "&_seller=true" + displayActive
+  );
+
+  // const filterActive = document.querySelector("#filter-active");
+  // const filterActive = document.querySelector("#filter-active");
+
+  // if (filterActive.value === 2) {
+  //   console.log(filterActive.value);
+  //   displayActive = "&_active=true";
+  // } else if (filterActive.value === 1) {
+  //   displayActive = "";
+  // }
+  // console.log(displayActive);
+
   const result = await response.json();
   console.log(result);
 
