@@ -96,10 +96,29 @@
           </div>
           <hr />
           <div id="bid-details"></div>
-          <div class="d-grid gap-2 col-3 mx-auto">
-            <button id="bid-button" class="btn btn-primary">Bid</button>
-            <!-- <a href="#" class="btn btn-primary">Bid Now</a> -->
-          </div>
+          <hr />
+          <!-- HERE NUMBERS TO BID -->
+          <form action="submit">
+            <div class="col-md-3 position-relative">
+              <label for="your-bid" class="form-label"
+                >You bid
+                <p id="display-last-bid"></p>
+                +
+              </label>
+              <input
+                type="number"
+                class="form-control"
+                id="your-bid"
+                required
+              />
+              <div class="invalid-tooltip">Please provide a valid zip.</div>
+            </div>
+            <!-- to here -->
+            <div class="d-grid gap-2 col-3 mx-auto">
+              <button id="bid-button" class="btn btn-primary">Bid</button>
+              <!-- <a href="#" class="btn btn-primary">Bid Now</a> -->
+            </div>
+          </form>
         </div>
       </div>
     </main>

@@ -5,12 +5,14 @@ const bidsUrl = "?_bids=true";
 const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
+const displayLastBid = document.querySelector("#display-last-bid");
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 export async function bidListener() {
-  const response = await fetch(listingsUrl + id + bidsUrl);
+  const response = await fetch(listingsUrl + id + bidsUrl + "&_seller=true");
   const result = await response.json();
   console.log(result);
 
@@ -23,9 +25,17 @@ export async function bidListener() {
   }
   console.log(lastBid);
 
+  displayLastBid.innerHTML = `${lastBid}`;
+  const yourBid = document.querySelector("#your-bid");
+
   const bidButton = document.querySelector("#bid-button");
-  const newBid = lastBid + 1; // + modal result?
-  bidButton.addEventListener("click", () => {
-    makeBid(newBid);
+
+  bidButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+    const myBid = parseInt(yourBid.value);
+    console.log(myBid);
+
+    const newBid = lastBid + myBid;
+    await makeBid(newBid);
   });
 }
