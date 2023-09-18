@@ -129,13 +129,88 @@ export async function readListing() {
   cardBids.innerHTML = `${result._count.bids}`;
   cardDescription.innerHTML = `${result.description}`;
 
-  const img = document.createElement("img");
+  console.log(result.media.length);
 
-  img.src = result.media[0];
-  img.className = "card-img-top";
-  img.alt = `image of ${result.title}`;
+  // const img = document.createElement("img");
 
-  const src = document.getElementById("card-body");
+  // img.src = result.media[0];
+  // img.className = "card-img-top";
+  // img.alt = `image of ${result.title}`;
 
-  src.appendChild(img);
+  const cardBody = document.getElementById("card-body");
+
+  const carouselInner = document.querySelector("#carousel-inner");
+  const imgDiv = document.querySelector("#carousel-div");
+
+  // if (result.media.length === 1) {
+  // const divCar = document.createElement("div");
+  // divCar.className = "carousel-item active carousel-div";
+  const pic = document.createElement("img");
+  pic.src = result.media[0];
+  pic.className = "d-block w-100";
+  pic.alt = `an image`;
+
+  imgDiv.appendChild(pic);
+
+  //     cardBody.innerHTML = `
+  // <div id="carouselExample" class="carousel slide">
+  //             <div id="carousel-inner" class="carousel-inner">
+  //               <div class="carousel-item active">
+  //                 <img src="${result.media[0]}" class="d-block w-100" alt="..." />
+  //               </div>
+  //             </div>
+  //             <button
+  //               class="carousel-control-prev"
+  //               type="button"
+  //               data-bs-target="#carouselExample"
+  //               data-bs-slide="prev"
+  //             >
+  //               <span
+  //                 class="carousel-control-prev-icon"
+  //                 aria-hidden="true"
+  //               ></span>
+  //               <span class="visually-hidden">Previous</span>
+  //             </button>
+  //             <button
+  //               class="carousel-control-next"
+  //               type="button"
+  //               data-bs-target="#carouselExample"
+  //               data-bs-slide="next"
+  //             >
+  //               <span
+  //                 class="carousel-control-next-icon"
+  //                 aria-hidden="true"
+  //               ></span>
+  //               <span class="visually-hidden">Next</span>
+  //             </button>
+  //            </div>
+  // `;
+  // }
+  // const carouselInner = document.querySelector("#carousel-inner");
+  // const carouselDiv = document.querySelector("#carousel-div");
+  if (result.media.length > 1) {
+    result.media.forEach((picture) => {
+      // .style.display = "none";
+      const carouselInner = document.querySelector("#carousel-inner");
+
+      // const fragment = document.createDocumentFragment();
+      // const pic = fragment
+      //   .appendChild(document.createElement("div"))
+      //   .appendChild(document.createElement("img"));
+      // pic.src = picture;
+      // pic.className = "d-block w-100";
+
+      // carouselInner.appendChild(fragment);
+
+      const divCards = document.createElement("div");
+      divCards.className = "carousel-item";
+      const pic = document.createElement("img");
+      pic.src = picture;
+      pic.className = "d-block w-100";
+
+      carouselInner.appendChild(divCards).appendChild(pic);
+    });
+  }
+
+  // cardBody.appendChild(img);
 }
