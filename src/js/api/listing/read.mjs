@@ -137,21 +137,19 @@ export async function readListing() {
   // img.className = "card-img-top";
   // img.alt = `image of ${result.title}`;
 
-  const cardBody = document.getElementById("card-body");
+  // const cardBody = document.getElementById("card-body");
 
-  const carouselInner = document.querySelector("#carousel-inner");
+  // const carouselInner = document.querySelector("#carousel-inner");
   const imgDiv = document.querySelector("#carousel-div");
 
   // if (result.media.length === 1) {
-  // const divCar = document.createElement("div");
-  // divCar.className = "carousel-item active carousel-div";
   const pic = document.createElement("img");
   pic.src = result.media[0];
   pic.className = "d-block w-100";
   pic.alt = `an image`;
 
   imgDiv.appendChild(pic);
-
+  // }
   //     cardBody.innerHTML = `
   // <div id="carouselExample" class="carousel slide">
   //             <div id="carousel-inner" class="carousel-inner">
@@ -189,27 +187,33 @@ export async function readListing() {
   // const carouselInner = document.querySelector("#carousel-inner");
   // const carouselDiv = document.querySelector("#carousel-div");
   if (result.media.length > 1) {
-    result.media.forEach((picture) => {
-      // .style.display = "none";
+    for (let i = 1; i < result.media.length; i++) {
       const carouselInner = document.querySelector("#carousel-inner");
-
-      // const fragment = document.createDocumentFragment();
-      // const pic = fragment
-      //   .appendChild(document.createElement("div"))
-      //   .appendChild(document.createElement("img"));
-      // pic.src = picture;
-      // pic.className = "d-block w-100";
-
-      // carouselInner.appendChild(fragment);
-
       const divCards = document.createElement("div");
       divCards.className = "carousel-item";
       const pic = document.createElement("img");
-      pic.src = picture;
+      pic.src = result.media[i];
       pic.className = "d-block w-100";
 
       carouselInner.appendChild(divCards).appendChild(pic);
-    });
+    }
+
+    // result.media.forEach((picture) => {
+    // const carouselInner = document.querySelector("#carousel-inner");
+    // const fragment = document.createDocumentFragment();
+    // const pic = fragment
+    //   .appendChild(document.createElement("div"))
+    //   .appendChild(document.createElement("img"));
+    // pic.src = picture;
+    // pic.className = "d-block w-100";
+    // carouselInner.appendChild(fragment);
+    // const divCards = document.createElement("div");
+    // divCards.className = "carousel-item";
+    // const pic = document.createElement("img");
+    // pic.src = picture;
+    // pic.className = "d-block w-100";
+    // carouselInner.appendChild(divCards).appendChild(pic);
+    // });
   }
 
   // cardBody.appendChild(img);
