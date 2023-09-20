@@ -70,14 +70,14 @@ export async function readListings() {
     cardsContainer.innerHTML += `
     <div id="card" class="col-6 m-5 card" style="width: 18rem">
 
-      <p id="seller-name" class="card-text my-1 d-flex justify-content-around align-items-center"
-          >by: ${element.seller.name}
+      <h5 id="seller-name" class="card-text my-1 d-flex justify-content-around align-items-center"
+          ><p class="text-secondary my-auto">by:</p> ${element.seller.name}
           <img src="${element.seller.avatar}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
-      </p>
+      </h5>
         
           <div class="card-body">
           <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
-            <h5 id="itemTitle" class="card-title">${element.title}</h5>
+            <h5 id="itemTitle" class="card-title mt-2">${element.title}</h5>
             <hr>
             <div class="row">
             

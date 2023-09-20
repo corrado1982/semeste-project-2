@@ -11905,4 +11905,9 @@ h1, .h1 {
   text-align: center;
 }
 
+hr {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
 /*# sourceMappingURL=styles.css.map */
