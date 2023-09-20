@@ -142,14 +142,25 @@ export async function readListing() {
   // const carouselInner = document.querySelector("#carousel-inner");
   const imgDiv = document.querySelector("#carousel-div");
 
-  // if (result.media.length === 1) {
+  const preArrow = document.querySelector(".pre-arrow");
+  const nextArrow = document.querySelector(".next-arrow");
+
   const pic = document.createElement("img");
   pic.src = result.media[0];
   pic.className = "d-block w-100";
   pic.alt = `an image`;
 
-  imgDiv.appendChild(pic);
+  if (result.media.length <= 1) {
+    preArrow.classList.add("visually-hidden");
+    nextArrow.classList.add("visually-hidden");
+  }
+  //  else {
+  //   preArrow.classList.remove("visually-hidden");
+  //   nextArrow.classList.remove("visually-hidden");
   // }
+
+  imgDiv.appendChild(pic);
+
   //     cardBody.innerHTML = `
   // <div id="carouselExample" class="carousel slide">
   //             <div id="carousel-inner" class="carousel-inner">
@@ -186,6 +197,7 @@ export async function readListing() {
   // }
   // const carouselInner = document.querySelector("#carousel-inner");
   // const carouselDiv = document.querySelector("#carousel-div");
+
   if (result.media.length > 1) {
     for (let i = 1; i < result.media.length; i++) {
       const carouselInner = document.querySelector("#carousel-inner");
