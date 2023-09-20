@@ -13,6 +13,9 @@ const cardBidsContainer = document.querySelector("#bid-details");
 // const itemContainer = document.querySelector("#listItem");
 const cardsContainer = document.querySelector("#cardsContainer");
 
+const sellerName = document.querySelector("#seller-name");
+const sellerAvatar = document.querySelector("#seller-avatar");
+
 // "&_active=true"
 // let isItActive = "";
 const displayActive = "&_active=true";
@@ -124,6 +127,13 @@ export async function readListing() {
   });
   // here event
   console.log(result);
+  sellerName.innerHTML = `by: ${result.seller.name}`;
+  sellerAvatar.innerHTML = `<img
+                              src="${result.seller.avatar}"
+                              id="avatar"
+                              class="rounded float-end w-25"
+                              alt="avatar of ${result.seller.name}"
+                            />`;
   cardTitle.innerHTML = `${result.title}`;
   cardExpire.innerHTML = `${result.endsAt}`;
   cardBids.innerHTML = `${result._count.bids}`;

@@ -17,24 +17,20 @@
     <header>
       <div class="row align-items-center bg-dark d-flex">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="p-0 col-3 search-container d-flex justify-content-center">
-          <form class="d-flex" action="">
-            <input
-              class="form-control rounded-5"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
-          >Bid.com</a
-        >
-        <div class="col row">
+        <div class="col-3 m-1 row">
           <div class="col p-0 text-primary fs-6">Points=</div>
           <p id="points" class="d-flex m-auto col text-secondary"></p>
         </div>
-        <div id="image-avatar" class="col-1 row"></div>
+
+        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
+          >Bid.com</a
+        >
+        <!-- <div class="col row">
+          <div class="col p-0 text-primary fs-6">Points=</div>
+          <p id="points" class="d-flex m-auto col text-secondary"></p>
+        </div> -->
+
+        <div id="image-avatar" class="col-1 row" style="width: 120px"></div>
         <div class="col-1 row p-0 rigth-nav d-flex">
           <div class="dropdown">
             <button
@@ -68,7 +64,13 @@
       Listing detail item page Item card to test here
       <div class="col-6 m-auto card">
         <div class="card-body">
-          <div id="card-body"></div>
+          <!-- <div id="card-body"></div> -->
+          <!-- POPULATE NAME AND AAVATAR OF SELLER -->
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 id="seller-name" class="card-text m-3">by</h4>
+            <div style="width: 200px" id="seller-avatar"></div>
+          </div>
+
           <!-- PROVA CAROSELLO -->
           <div id="carouselExample" class="carousel slide">
             <div id="carousel-inner" class="carousel-inner">
@@ -102,8 +104,9 @@
             </button>
           </div>
           <!-- FINO QUI -->
-          <h5 id="itemTitle" class="card-title">${result.title}</h5>
-          <p id="description"></p>
+          <h4 id="itemTitle" class="card-title mt-3">${result.title}</h4>
+          <h5 id="description"></h5>
+          <hr />
           <div class="d-flex justify-content-between flex-wrap">
             <p class="card-text">Expiring</p>
             <p
@@ -126,8 +129,10 @@
           <hr />
           <!-- HERE NUMBERS TO BID -->
           <form action="submit">
-            <div class="col-md-3 position-relative">
-              <label for="your-bid" class="form-label"
+            <div class="d-flex align-items-baseline">
+              <label
+                for="your-bid"
+                class="form-label d-flex justify-content-between col-6"
                 >You bid
                 <p id="display-last-bid"></p>
                 +
