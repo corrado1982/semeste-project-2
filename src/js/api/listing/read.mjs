@@ -70,7 +70,7 @@ export async function readListings() {
     cardsContainer.innerHTML += `
     <div id="card" class="col-6 m-5 card" style="width: 18rem">
 
-      <p id="seller-name" class="card-text"
+      <p id="seller-name" class="card-text my-1 d-flex justify-content-around align-items-center"
           >by: ${element.seller.name}
           <img src="${element.seller.avatar}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
       </p>
@@ -78,7 +78,9 @@ export async function readListings() {
           <div class="card-body">
           <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
             <h5 id="itemTitle" class="card-title">${element.title}</h5>
+            <hr>
             <div class="row">
+            
               <p class="card-text col-6">Bids</p>
               <p
                 id="actualPrice"
@@ -125,7 +127,7 @@ export async function readListing() {
     cardBidsContainer.innerHTML += `
     <div class="d-flex justify-content-between">
     <p>${bidDetail.bidderName}</p>
-    <p>${bidDetail.amount}</p>
+    <p class="count-bids">${bidDetail.amount}</p>
     </div>`;
   });
   // here event

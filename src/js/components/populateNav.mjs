@@ -15,6 +15,6 @@ export async function populateNavigation() {
   displayPoints.innerHTML = credits;
   displayName.innerHTML = userName;
   if (avatar) {
-    displayAvatar.innerHTML = `<img src="${avatar}" alt="image of ${userName} s Avata">`;
+    displayAvatar.innerHTML = `<img src="${avatar}" style="width: 100px" alt="image of ${userName} s Avata">`;
   }
 }

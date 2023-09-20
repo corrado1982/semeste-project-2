@@ -17,24 +17,17 @@
     <header>
       <div class="row align-items-center bg-dark d-flex">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="p-0 col-3 search-container d-flex justify-content-center">
-          <form class="d-flex" action="">
-            <input
-              class="form-control rounded-5"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
-          >Bid.com</a
-        >
-        <div class="col row">
+
+        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
+        <div class="col-3 m-1 row">
           <div class="col p-0 text-primary fs-6">Points=</div>
           <p id="points" class="d-flex m-auto col text-secondary"></p>
         </div>
-        <div id="image-avatar" class="col-1 row"></div>
+
+        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
+          >Bid.com</a
+        >
+        <div id="image-avatar" class="col-1 row" style="width: 120px"></div>
         <div class="col-1 row p-0 rigth-nav d-flex">
           <div class="dropdown">
             <button
@@ -75,7 +68,9 @@
           <div id="message"></div>
           <form id="avatar-form">
             <div class="mb-3">
-              <label for="avatar" class="form-label">Avatar URL</label>
+              <label for="avatar" class="form-label text-dark"
+                >Avatar URL</label
+              >
               <input name="avatar" type="url" class="form-control" required />
             </div>
 

@@ -11850,5 +11850,59 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Kalam Regular";
+  src: url(../../fonts/Kalam-Regular.ttf) format("truetype");
+}
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+p {
+  font-family: "Kalam Regular";
+}
+
+body {
+  background-color: rgba(255, 152, 255, 0.155);
+}
+
+.card-title,
+p,
+label,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: #c183ff;
+}
+
+hr,
+#actualPrice,
+#remainingTime,
+#bids,
+#display-last-bid,
+.count-bids {
+  color: rgb(244, 206, 253);
+}
+
+.card {
+  background-color: #212529;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, .h1 {
+  margin: 0;
+  text-align: center;
+}
 
 /*# sourceMappingURL=styles.css.map */

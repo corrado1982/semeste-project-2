@@ -1,2 +1,45 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+  font-family: "Kalam Regular";
+  src: url(../../fonts/Kalam-Regular.ttf) format("truetype");
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Kalam Regular";
+}
+body {
+  background-color: rgba(255, 152, 255, 0.155);
+}
+.card-title,
+p,
+label,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+hr,
+#actualPrice,
+#remainingTime,
+#bids,
+#display-last-bid,
+.count-bids {
+  color: $secondary;
+}
+
+.card {
+  background-color: $dark;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  margin: 0;
+  text-align: center;
+}
