@@ -87,20 +87,23 @@ export async function readListings() {
                 
               </p>
             </div>
-            <div class="row">
-              <p class="card-text col-6">Expiring</p>
+            <hr>
+            <div class="row d-flex flex-wrap">
+              <p class="card-text mb-0">Expiring :</p>
               <p
                 id="remainingTime"
-                class="card-text col-6 d-flex justify-content-end"
+                class="card-text"
               >
               ${element.endsAt}
               </p>
             </div>
 
 
-          <a href="/listing/index.html?id=${element.id}" class="btn btn-primary"
-          >a See details</a
-        >
+          <a 
+            href="/listing/index.html?id=${element.id}" 
+            class="btn btn-primary d-flex justify-content-center mt-3"
+            >See details
+          </a>
            
           </div>
         </div>
