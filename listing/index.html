@@ -14,44 +14,42 @@
     <title>Bit.com | listing page</title>
   </head>
   <body>
-    <header>
+    <nav>
       <div class="row align-items-center bg-dark d-flex m-0">
-        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="col-3 m-1 row">
-          <p class="col p-0 text-primary fs-6 m-auto">Points=</p>
-          <p id="points" class="d-flex m-auto col text-secondary"></p>
+        <div class="col-3 m-1 row d-flex flex-wrap">
+          <p class="col fs-3 p-0 text-primary m-auto">Points=</p>
+          <p id="points" class="fs-3 d-flex my-auto col p-0 text-secondary"></p>
         </div>
 
         <a class="p-0 col-6 active text-center fs-1" href="/listings/">
-          <h1>Bid.com</h1>
+          <h1>bid.com</h1>
         </a>
-        <!-- <div class="col row">
-          <div class="col p-0 text-primary fs-6">Points=</div>
-          <p id="points" class="d-flex m-auto col text-secondary"></p>
-        </div> -->
 
         <div class="col-3 row p-0 rigth-nav d-flex">
-          <div id="image-avatar" class="row col-6"></div>
-          <div class="dropdown col m-auto">
+          <div
+            id="image-avatar"
+            class="row m-0 p-0 col-4 col-sm-4 col-md-2"
+          ></div>
+          <p id="loggedName" class="col-2 my-auto px-0"></p>
+          <div class="dropdown col-1 mx-4">
+            <!-- id="loggedName" down on the button -->
             <button
-              id="loggedName"
               class="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
-              Append Name Here
-            </button>
+            ></button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="../avatar/index.html">Avatar</a>
+                <a class="dropdown-item" href="../avatar/index.html"
+                  >Update Avatar</a
+                >
               </li>
               <li>
                 <a class="dropdown-item" href="../listing/create/index.html"
-                  >Your Listing</a
+                  >Make your Listing</a
                 >
               </li>
-              <li><a class="dropdown-item" href="#">Your Bid</a></li>
               <li>
                 <a id="logOutButton" class="dropdown-item" href="/">Log out</a>
               </li>
@@ -59,19 +57,17 @@
           </div>
         </div>
       </div>
-    </header>
+    </nav>
     <main>
-      Listing detail item page Item card to test here
       <div class="col-6 m-auto my-5 card">
         <div class="card-body">
-          <!-- <div id="card-body"></div> -->
-          <!-- POPULATE NAME AND AAVATAR OF SELLER -->
+          <!-- POPULATE NAME AND AVATAR OF SELLER -->
           <div class="d-flex justify-content-between align-items-center">
             <h4 id="seller-name" class="card-text m-3">by</h4>
             <div style="width: 200px" id="seller-avatar"></div>
           </div>
 
-          <!-- PROVA CAROSELLO -->
+          <!--  CAROSELL -->
           <div id="carouselExample" class="carousel slide">
             <div id="carousel-inner" class="carousel-inner">
               <div id="carousel-div" class="carousel-item active">
@@ -104,7 +100,7 @@
             </button>
           </div>
           <!-- FINO QUI -->
-          <h4 id="itemTitle" class="card-title mt-3">${result.title}</h4>
+          <h4 id="itemTitle" class="card-title mt-3">Title</h4>
           <h5 id="description"></h5>
           <hr />
           <div class="d-flex justify-content-between flex-wrap">
@@ -133,7 +129,7 @@
               <label
                 for="your-bid"
                 class="form-label d-flex justify-content-between col-6"
-                >You bid
+                >Your bid =
                 <p id="display-last-bid"></p>
                 +
               </label>
@@ -143,11 +139,11 @@
                 id="your-bid"
                 required
               />
-              <div class="invalid-tooltip">Please provide a valid zip.</div>
+              <div class="invalid-tooltip">Please provide a valid number</div>
             </div>
             <!-- to here -->
             <div class="d-grid gap-2 col-3 mx-auto">
-              <button id="bid-button" class="btn btn-primary">Bid</button>
+              <button id="bid-button" class="btn btn-primary">Bid Now</button>
               <!-- <a href="#" class="btn btn-primary">Bid Now</a> -->
             </div>
           </form>
