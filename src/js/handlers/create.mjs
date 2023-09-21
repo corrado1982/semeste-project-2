@@ -20,29 +20,6 @@ export function createListener() {
 
     const response = await create(profile);
     console.log(response);
+    form.reset();
   });
 }
-
-// const data = {
-//   title: "title",
-//   description: "I am a description",
-//   tags: ["adeal"],
-//   media: [
-//     "https://upload.wikimedia.org/wikipedia/commons/6/60/Modern-tractor.jpg",
-//   ],
-//   endsAt: "2024-01-01T00:00:00.000Z",
-// };
-
-// create(data);
-
-// const myDate = new Date(
-//   year,
-//   monthIndex,
-//   day,
-//   hours,
-//   minutes,
-//   seconds,
-//   milliseconds
-// );
-
-// console.log(myDate);

@@ -37,7 +37,6 @@ function router() {
     case "/":
     case "/index.html":
       readListings();
-
       break;
     case "/listing/":
     case "/listing/index.html":
@@ -45,6 +44,7 @@ function router() {
       bidListener();
       populateNavigation();
       remove();
+
       break;
     case "/avatar/":
     case "/avatar/index.html":

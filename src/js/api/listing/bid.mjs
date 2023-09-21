@@ -1,5 +1,6 @@
 import { BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
+import { refreshStorage } from "../../components/common/refreshStorage.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -21,5 +22,6 @@ export async function makeBid(bid) {
     },
   });
   console.log(response);
+  await refreshStorage();
   location.reload();
 }
