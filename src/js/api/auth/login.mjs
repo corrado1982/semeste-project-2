@@ -21,6 +21,9 @@ export async function login(profile) {
     const { accessToken, ...user } = await response.json();
     storage.save("token", accessToken);
     storage.save("profile", user);
+    // try to storage separate avatar
+    storage.save("avatar", user.avatar);
+    // to here
     console.log(response);
     location.href = "/listings"; //    ----change location-----
     return;

@@ -20,7 +20,8 @@ export async function updateAvatar(avatarUrl) {
     },
   });
   console.log(response);
-  //   location.reload();
+  storage.save("avatar", avatarUrl.avatar); //saving new avatar on local storage
+  location.reload(); //try to update rigth away
 }
 export function setAvatarListener() {
   const avatarForm = document.querySelector("#avatar-form");
@@ -33,5 +34,6 @@ export function setAvatarListener() {
 
     await updateAvatar(profileUrl);
     console.log(profileUrl);
+    form.reset();
   });
 }
