@@ -19,19 +19,7 @@
     <header>
       <div class="row align-items-center bg-dark d-flex justify-content-around">
         <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="col search-container d-flex justify-content-center">
-          <!-- SEARCH INPUT -->
-          <!-- <input
-            id="search-imput"
-            class="form-control me-2 rounded-5"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          /> -->
-          <!-- <button class="rounded-5 btn btn-primary" type="submit">
-              Search
-            </button> -->
-        </div>
+        <div class="col search-container d-flex justify-content-center"></div>
         <a class="col active text-center fs-1" href="/">Bid.com</a>
         <div class="col row rigth-nav d-flex">
           <form class="col d-flex justify-content-end" action="/profile/login/">
@@ -51,15 +39,16 @@
       </div>
     </header>
     <main>
-      Start page
       <!-- SEARCH INPUT -->
-      <input
-        id="search-imput"
-        class="form-control me-2 rounded-5"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
+      <div class="col-3 m-5">
+        <input
+          id="search-imput"
+          class="form-control m-2 rounded-5"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
       <!-- FILTER HERE -->
 
       <div
@@ -67,59 +56,6 @@
         id="cardsContainer"
       ></div>
       <!-- CARD -->
-      <!-- <div class="card" style="width: 18rem">
-        <div class="card-body">
-          <h5 id="itemTitle" class="card-title">Item 1</h5>
-          <div class="row">
-            <p class="card-text col-6">price now</p>
-            <p
-              id="actualPrice"
-              class="card-text col-6 d-flex justify-content-end"
-            >
-              1000
-            </p>
-          </div>
-          <div class="row">
-            <p class="card-text col-6">contdown</p>
-            <p
-              id="remainingTime"
-              class="card-text col-6 d-flex justify-content-end"
-            >
-              3:04:06
-            </p>
-          </div> -->
-      <!-- Modal button-->
-      <!-- <div class="d-flex justify-content-center">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              See detail
-            </button> -->
-      <!-- Modal -->
-      <!-- <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    To see details please <a href="/profile/login/">login</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="/listing/index.html?id=${element.id}" class="btn btn-primary"
-            >See details</a
-          >
-        </div>
-      </div> -->
     </main>
     <footer></footer>
     <script

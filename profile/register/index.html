@@ -45,7 +45,7 @@
     <main>
       <!-- Register form -->
       <div class="row">
-        <div class="col-12 text-center">Register</div>
+        <div class="col-12 text-center m-2"><h2>Register</h2></div>
       </div>
 
       <div class="row justify-content-around">
@@ -53,7 +53,7 @@
           <div id="message"></div>
           <form id="registerForm">
             <div class="mb-3">
-              <label for="">Username</label>
+              <label class="text-dark" for="">Username</label>
               <input
                 pattern="^[\w]+$"
                 maxlength="20"
@@ -69,7 +69,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="inputEmail" class="form-label">Email</label>
+              <label for="inputEmail" class="form-label text-dark">Email</label>
               <input
                 type="email"
                 name="email"
@@ -84,7 +84,9 @@
               <div id="emailHelp" class="form-text"></div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="password" class="form-label text-dark"
+                >Password</label
+              >
               <input
                 name="password"
                 type="password"
@@ -95,7 +97,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="avatar">Avatar</label>
+              <label class="text-dark" for="avatar">Avatar</label>
               <input type="url" name="avatar" class="form-control" />
             </div>
 
