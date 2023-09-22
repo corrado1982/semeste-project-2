@@ -1,6 +1,15 @@
 import { BASE_URL } from "../api/constants.mjs";
 import * as storage from "../storage/index.mjs";
 
+export function actualAvatar() {
+  const showAuctualAvatar = document.querySelector("#actual-avatar");
+  const actualAvatar = storage.load("avatar");
+  const user = storage.load("profile");
+  const userName = user.name;
+
+  showAuctualAvatar.innerHTML = `<img src="${actualAvatar}" class=" m-auto  p-0" alt="image of ${userName} s Avata">`;
+}
+
 const method = "put";
 
 export async function updateAvatar(avatarUrl) {
@@ -24,6 +33,8 @@ export async function updateAvatar(avatarUrl) {
   location.reload(); //try to update rigth away
 }
 export function setAvatarListener() {
+  actualAvatar();
+
   const avatarForm = document.querySelector("#avatar-form");
 
   avatarForm.addEventListener("submit", async (event) => {
