@@ -44,17 +44,19 @@ function router() {
       bidListener();
       populateNavigation();
       remove();
-
+      logoutListener();
       break;
     case "/avatar/":
     case "/avatar/index.html":
       setAvatarListener();
       populateNavigation();
+      logoutListener();
       break;
     case "/listing/create/":
     case "/listing/create/index.html":
       createListener();
       populateNavigation();
+      logoutListener();
       break;
   }
 }
