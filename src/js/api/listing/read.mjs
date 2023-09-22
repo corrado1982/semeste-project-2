@@ -97,7 +97,7 @@ export async function readListing() {
   sellerAvatar.innerHTML = `<img
                               src="${result.seller.avatar}"
                               id="avatar"
-                              class="rounded float-end w-25"
+                              class="rounded float-end w-50"
                               alt="avatar of ${result.seller.name}"
                             />`;
   cardTitle.innerHTML = `${result.title}`;
