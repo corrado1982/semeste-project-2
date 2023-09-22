@@ -1,6 +1,8 @@
 import { BASE_URL } from "../api/constants.mjs";
 import * as storage from "../storage/index.mjs";
 
+//showing in the avatar html the avatar is saved now
+//to have a feedback if the avatar it will be updated
 export function actualAvatar() {
   const showAuctualAvatar = document.querySelector("#actual-avatar");
   const actualAvatar = storage.load("avatar");
@@ -28,9 +30,10 @@ export async function updateAvatar(avatarUrl) {
       Authorization: `Bearer ${token}`,
     },
   });
+
   console.log(response);
   storage.save("avatar", avatarUrl.avatar); //saving new avatar on local storage
-  location.reload(); //try to update rigth away
+  location.reload(); //update it rigth away
 }
 export function setAvatarListener() {
   actualAvatar();
@@ -44,7 +47,7 @@ export function setAvatarListener() {
     const profileUrl = Object.fromEntries(formData.entries());
 
     await updateAvatar(profileUrl);
-    console.log(profileUrl);
+
     form.reset();
   });
 }
