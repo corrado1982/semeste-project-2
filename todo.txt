@@ -29,13 +29,13 @@ X A registered user may add a Bid to another user’s Listing
 X A registered user may view Bids made on a Listing
 X An unregistered user may search through Listings
 
--Make functionality of SEARCH 
+//Make functionality of SEARCH 
 --Move thru PAGES 
 --Make REMOVE item 
-+ REDIRECT page based on login 
---Make a MODAL for NUMBERS OF BID 
+// REDIRECT page based on login 
+//Make a MODAL for NUMBERS OF BID 
 --Is it possible to make expiry date previous date? 
---Update font 
---Update style 
+//Update font 
+//Update style 
 --Search sort by... 
 
