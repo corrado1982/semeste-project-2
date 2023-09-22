@@ -14,41 +14,42 @@
     <title>Bit.com | Avatar Page</title>
   </head>
   <body>
-    <header>
-      <div class="row align-items-center bg-dark d-flex">
-        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-
-        <!-- <div class="row navigation bg-secondary d-flex justify-content-around"> -->
-        <div class="col-3 m-1 row">
-          <div class="col p-0 text-primary fs-6">Points=</div>
-          <p id="points" class="d-flex m-auto col text-secondary"></p>
+    <nav>
+      <div class="row align-items-center bg-dark d-flex m-0">
+        <div class="col-3 m-1 row d-flex flex-wrap">
+          <p class="col fs-3 p-0 text-primary m-auto">Points=</p>
+          <p id="points" class="fs-3 d-flex my-auto col p-0 text-secondary"></p>
         </div>
 
-        <a class="p-0 col-6 active text-center fs-1" href="/listings/"
-          >Bid.com</a
-        >
-        <div id="image-avatar" class="col-1 row" style="width: 120px"></div>
-        <div class="col-1 row p-0 rigth-nav d-flex">
-          <div class="dropdown">
+        <a class="p-0 col-6 active text-center" href="/listings/">
+          <h1 class="fs-1">bid.com</h1>
+        </a>
+
+        <div class="col-3 row p-0 rigth-nav d-flex justify-content-between">
+          <div
+            id="image-avatar"
+            class="row m-0 p-0 col-4 col-sm-4 col-md-2 d-md-block d-none"
+          ></div>
+          <p id="loggedName" class="col-2 my-auto px-0"></p>
+          <div class="dropdown col-1 mx-4 my-auto">
+            <!-- id="loggedName" down on the button -->
             <button
-              id="loggedName"
               class="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
-              Append Name Here
-            </button>
+            ></button>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="../avatar/index.html">Avatar</a>
+                <a class="dropdown-item" href="../avatar/index.html"
+                  >Update Avatar</a
+                >
               </li>
               <li>
                 <a class="dropdown-item" href="../listing/create/index.html"
-                  >Your Listing</a
+                  >Make your Listing</a
                 >
               </li>
-              <li><a class="dropdown-item" href="#">Your Bid</a></li>
               <li>
                 <a id="logOutButton" class="dropdown-item" href="/">Log out</a>
               </li>
@@ -56,7 +57,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </nav>
     <main>
       <!-- Avatar form -->
       <div class="row">
@@ -77,9 +78,16 @@
             <button class="btn btn-primary d-flex m-auto">Upload Avatar</button>
           </form>
         </div>
+        <div id="actual-avatar" class="d-flex m-5"></div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="bg-dark">
+      <div class="mx-auto d-flex flex-column">
+        <h3 class="text-primary mx-auto my-3">bid.com</h3>
+        <p class="d-block mx-auto">Is a website made by Corrado Di Rofi</p>
+        <p class="d-block mx-auto">Contact me: corrado.rofi@gmail.com</p>
+      </div>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
