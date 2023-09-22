@@ -1,6 +1,7 @@
 import { BASE_URL } from "../constants.mjs";
 import { LOGIN_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
+import handleErrors from "../handleErrors.mjs";
 
 const action = LOGIN_URL; //to update
 const method = "post";
@@ -21,13 +22,13 @@ export async function login(profile) {
     const { accessToken, ...user } = await response.json();
     storage.save("token", accessToken);
     storage.save("profile", user);
-    // try to storage separate avatar
+    // storage separate avatar
     storage.save("avatar", user.avatar);
-    // to here
+
     console.log(response);
     location.href = "/listings"; //    ----change location-----
     return;
   }
-
-  throw new Error("Login failed!");
+  const loginJson = await response.json();
+  handleErrors(loginJson);
 }

@@ -1,9 +1,10 @@
 import { BASE_URL } from "../constants.mjs";
 import { REGISTER_URL } from "../constants.mjs";
+import handleErrors from "../handleErrors.mjs";
 
 const action = REGISTER_URL;
 const method = "post";
-
+//sending a Post request to register
 export async function register(profile) {
   const registerUlr = BASE_URL + action;
   const body = JSON.stringify(profile);
@@ -15,11 +16,11 @@ export async function register(profile) {
     method,
     body,
   });
+  const json = await response.json();
 
   if (response.ok) {
-    const result = await response.json();
-    return result;
+    return json;
   }
 
-  throw new Error("Registration failed!");
+  handleErrors(json);
 }

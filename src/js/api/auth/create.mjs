@@ -1,5 +1,6 @@
 import { BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
+import handleErrors from "../handleErrors.mjs";
 
 console.log("greet from CREATE");
 
@@ -18,17 +19,10 @@ export async function create(listingData) {
       Authorization: `Bearer ${token}`,
     },
   });
+  const json = await response.json();
+  if (response.ok) {
+    return json;
+  }
+  handleErrors(json);
   console.log(response);
 }
-
-// const data = {
-//   title: "title",
-//   description: "I am a description",
-//   tags: ["adeal"],
-//   media: [
-//     "https://upload.wikimedia.org/wikipedia/commons/6/60/Modern-tractor.jpg",
-//   ],
-//   endsAt: "2024-01-01T00:00:00.000Z",
-// };
-
-// create(data);

@@ -2,7 +2,6 @@
 import { register } from "../api/auth/register.mjs";
 import displayMessage from "../components/displayMessage.mjs";
 import { login } from "../api/auth/login.mjs"; //experiment login from register page
-console.log("hello");
 
 export function setDataRegisterListener() {
   const form = document.querySelector("#registerForm");
@@ -13,26 +12,20 @@ export function setDataRegisterListener() {
     const form = event.target;
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
-
+    // const profile contain email and password
+    // now is collected inside const profileToLogin to be passed inside login() function
     const profileEmail = profile.email;
     const profilePassword = profile.password;
     const profileToLogin = { email: profileEmail, password: profilePassword };
-
-    console.log(profile.password);
 
     try {
       const response = await register(profile);
       console.log(response);
 
-      displayMessage(
-        "success",
-        "you successfully registered. Please Login!",
-        "#message"
-      );
-      // call here the login()?
-      // form.reset();
+      displayMessage("success", "you successfully registered!", "#message");
+      //login() function get passed data to make a login
+      //so the user can access the his own profile without make again a login
       await login(profileToLogin);
-      location.href = "/listings";
     } catch (error) {
       displayMessage("danger", error, "#message");
       console.log(error);

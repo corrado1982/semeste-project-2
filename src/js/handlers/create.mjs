@@ -17,9 +17,14 @@ export function createListener() {
 
     console.log(formData);
     console.log(profile);
-
-    const response = await create(profile);
-    console.log(response);
-    form.reset();
+    try {
+      const response = await create(profile);
+      console.log(response);
+      displayMessage("success", "you successfully logged!", "#message");
+      form.reset();
+    } catch (error) {
+      displayMessage("danger", error, "#message");
+      console.log(error);
+    }
   });
 }
