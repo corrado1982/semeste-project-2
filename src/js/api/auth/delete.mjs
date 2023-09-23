@@ -1,31 +1,33 @@
-import { BASE_URL } from "../constants.mjs";
-import * as storage from "../../storage/index.mjs";
+// THI FUNCTION WAS NOT REQUIRED, I JUST USED TO DELETE SOME LISTING I MADE BY MISTAKE
 
-console.log("greet from CREATE");
+// import { BASE_URL } from "../constants.mjs";
+// import * as storage from "../../storage/index.mjs";
 
-// const queryString = document.location.search;
-// const params = new URLSearchParams(queryString);
-// const id = params.get("id");
+// console.log("greet from CREATE");
 
-export async function remove() {
-  const createUrl =
-    BASE_URL + "/listings/" + "62d8f1b7-0b4c-41fb-ac71-652be7c75866";
+// // const queryString = document.location.search;
+// // const params = new URLSearchParams(queryString);
+// // const id = params.get("id");
 
-  const method = "delete";
-  const body = JSON.stringify();
-  const token = storage.load("token");
+// export async function remove() {
+//   const createUrl =
+//     BASE_URL + "/listings/" + "62d8f1b7-0b4c-41fb-ac71-652be7c75866";
 
-  const response = await fetch(createUrl, {
-    method,
-    // body,
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  console.log(response);
-}
+//   const method = "delete";
+//   const body = JSON.stringify();
+//   const token = storage.load("token");
 
-// export function removeListener() {
-//     deleteButton.
+//   const response = await fetch(createUrl, {
+//     method,
+//     // body,
+//     headers: {
+//       "Content-type": "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
+//   console.log(response);
 // }
+
+// // export function removeListener() {
+// //     deleteButton.
+// // }

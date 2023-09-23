@@ -8,8 +8,9 @@ import { setAvatarListener } from "./handlers/avatar.mjs";
 // import { updateAvatar } from "./handlers/avatar.mjs";
 import { bidListener } from "./handlers/bid.mjs";
 // import { create } from "./api/auth/create.mjs";
-import { remove } from "./api/auth/delete.mjs"; // REMOVE LISTENER TO BE MADE
+// import { remove } from "./api/auth/delete.mjs"; // REMOVE LISTENER TO BE MADE
 import { createListener } from "./handlers/create.mjs";
+// import { sortListings } from "./api/listing/read.mjs"; //sorting
 
 import { redirectBasedOnLogin } from "./api/helpers/auth.mjs";
 const path = window.location.pathname;
@@ -30,6 +31,7 @@ function router() {
     case "/listings/":
     case "/listings/index.html":
       readListings();
+      // sortListings();
       logoutListener();
       populateNavigation();
 
@@ -43,7 +45,7 @@ function router() {
       readListing();
       bidListener();
       populateNavigation();
-      remove();
+      // remove();
       logoutListener();
       break;
     case "/avatar/":
@@ -62,18 +64,3 @@ function router() {
 }
 redirectBasedOnLogin(path);
 router();
-// redirectBasedOnLogin(path);
-// const year = 2003;
-// const monthIndex = 5;
-// const day = 1;
-// const hours = 14;
-// const minutes = 34;
-// const seconds = 22;
-// const ms = 0;
-// const milliseconds = 23;
-
-// const newDate = new Date(year, monthIndex, day, hours, minutes, seconds, ms);
-
-// console.log(newDate);
-
-// console.log(new Date(day));
