@@ -12,18 +12,38 @@ const sellerAvatar = document.querySelector("#seller-avatar");
 
 // "&_active=true"
 // let isItActive = "";
+
 const displayActive = "&_active=true";
 const bidsUrl = "?_bids=true";
 const listingsUrlEnd = "/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
-const filterActive = document.querySelector("#filter-active");
+//prova filtro
+// const filterActive = document.querySelector("#filter-active");
+// const filterValue = Number(filterActive.value);
 
+// if (filterValue === 1) {
+//   displayActive = "&_active=false";
+// }
+// if (filterValue === 2) {
+//   displayActive = displayActive.replace("false", "true");
+// }
+// filterActive.addEventListener("change", (event) => {
+//   event.preventDefault();
+
+//   console.log(displayActive);
+//   readListings();
+//   location.reload();
+// });
+
+// console.log(filterActive.value);
+// console.log(displayActive);
+//fino qui
 export async function readListings() {
   const response = await fetch(
     listingsUrl + bidsUrl + "&_seller=true" + displayActive
   );
-
+  console.log(displayActive);
   const result = await response.json();
   console.log(result);
 
