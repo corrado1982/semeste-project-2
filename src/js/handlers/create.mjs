@@ -20,7 +20,7 @@ export function createListener() {
     try {
       const response = await create(profile);
       console.log(response);
-      displayMessage("success", "you successfully logged!", "#message");
+      displayMessage("success", "you created a Listing!", "#message");
       form.reset();
     } catch (error) {
       displayMessage("danger", error, "#message");
