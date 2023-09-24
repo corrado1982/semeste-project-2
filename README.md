@@ -43,8 +43,6 @@ The Product Owner has requested links to the following:
 
 ## Install dependencies
 
-To run the app, run the following commands:
-
       npm i
 
 ## Build SASS
