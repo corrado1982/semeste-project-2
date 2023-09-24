@@ -40,3 +40,13 @@ The Product Owner has requested links to the following:
 - A kanban project board
 - A repository link
 - A hosted application demo link
+
+## Install dependencies
+
+To run the app, run the following commands:
+
+      npm i
+
+## Build SASS
+
+     npm run build
