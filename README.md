@@ -25,30 +25,11 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 - A registered user may view Bids made on a Listing
 - An unregistered user may search through Listings
 
-## Technical restrictions
-
-The company CTO has set the following technical restrictions:
-
-- Must use an approved CSS Framework
-- Must be hosted on an approved Static Host
-- Must use an approved Design Application
-- Must use an approved Planning Application
-
-## Required links
-
-The Product Owner has requested links to the following:
-
-- A Gantt chart for project timing
-- A design prototype
-- A style guide
-- A kanban project board
-- A repository link
-- A hosted application demo link
-
 - ## Built With
 
 You can list a the tech stack that you've used over here
 
+- Javascript
 - [SASS](https://sass-lang.com/install/)
 - [Bootstrap](https://getbootstrap.com)
 
