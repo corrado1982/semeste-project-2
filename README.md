@@ -27,8 +27,6 @@ When a new user joins the website, they are given 1000 credits to use on the sit
 
 - ## Built With
 
-You can list a the tech stack that you've used over here
-
 - Javascript
 - [SASS](https://sass-lang.com/install/)
 - [Bootstrap](https://getbootstrap.com)
