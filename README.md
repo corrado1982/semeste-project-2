@@ -55,4 +55,4 @@ Email: corrado.rofi@gmail.com
 
 ## Link to Netlify
 
-https://dazzling-crumble-3f8f9b.netlify.app/listings/
+https://dazzling-crumble-3f8f9b.netlify.app
