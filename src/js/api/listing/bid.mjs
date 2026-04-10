@@ -1,7 +1,8 @@
 import { BASE_URL, API_KEY } from "../constants.mjs"; // Assicurati di importare API_KEY
 import * as storage from "../../storage/index.mjs";
 import { refreshStorage } from "../../components/common/refreshStorage.mjs";
-
+//import populateNavigation from "../../../js/components/populateNav.mjs";
+import { populateNavigation } from "../../../js/components/populateNav.mjs";
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
