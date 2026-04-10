@@ -11864,7 +11864,7 @@ h4,
 h5,
 .h5,
 p {
-  font-family: "Kalam Regular";
+  font-family: "Kalam Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
