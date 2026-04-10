@@ -61,59 +61,77 @@ const id = params.get("id");
 export async function readListing() {
   const response = await fetch(listingsUrl + id + bidsUrl + "&_seller=true");
   const result = await response.json();
+  const listing = result.data; // Nella v2 i dati sono dentro .data
 
-  result.bids.forEach((bidDetail) => {
-    // console.log(bidDetail);
+  // 1. POPOLIAMO I BIDS (Offerte)
+  cardBidsContainer.innerHTML = ""; // Puliamo prima di aggiungere
+  if (listing.bids && listing.bids.length > 0) {
+    listing.bids.forEach((bidDetail) => {
+      cardBidsContainer.innerHTML += `
+      <div class="d-flex justify-content-between border-bottom py-1">
+        <p class="mb-0">${bidDetail.bidder.name}</p>
+        <p class="mb-0 fw-bold">${bidDetail.amount} credits</p>
+      </div>`;
+    });
+  } else {
+    cardBidsContainer.innerHTML = "<p>No bids yet.</p>";
+  }
 
-    cardBidsContainer.innerHTML += `
-    <div class="d-flex justify-content-between">
-    <p>${bidDetail.bidderName}</p>
-    <p class="count-bids">${bidDetail.amount}</p>
-    </div>`;
-  });
-  // here event
-  console.log(result);
-  sellerName.innerHTML = `<p class="text-secondary">by: </p>${result.seller.name}`;
+  // 2. INFORMAZIONI VENDITORE E TESTI
+  sellerName.innerHTML = `<p class="text-secondary d-inline">by: </p>${listing.seller.name}`;
+
+  const sellerAvatarUrl =
+    listing.seller.avatar?.url || "https://placeholder.com";
   sellerAvatar.innerHTML = `<img
-                              src="${result.seller.avatar}"
+                              src="${sellerAvatarUrl}"
                               id="avatar"
                               class="rounded float-end w-50"
-                              alt="avatar of ${result.seller.name}"
+                              alt="avatar of ${listing.seller.name}"
                             />`;
-  cardTitle.innerHTML = `${result.title}`;
-  cardExpire.innerHTML = `${result.endsAt}`;
-  cardBids.innerHTML = `${result._count.bids}`;
-  cardDescription.innerHTML = `${result.description}`;
 
-  console.log(result.media.length);
+  cardTitle.innerHTML = listing.title;
+  cardExpire.innerHTML = new Date(listing.endsAt).toLocaleString(); // Formattiamo la data
+  cardBids.innerHTML = listing._count.bids;
+  cardDescription.innerHTML = listing.description || "No description provided.";
 
-  const imgDiv = document.querySelector("#carousel-div");
-
+  // 3. GESTIONE CAROSELLO (Immagini)
+  const carouselInner = document.querySelector("#carousel-inner");
   const preArrow = document.querySelector(".pre-arrow");
   const nextArrow = document.querySelector(".next-arrow");
 
-  const pic = document.createElement("img");
-  pic.src = result.media[0];
-  pic.className = "d-block w-100";
-  pic.alt = `an image`;
+  carouselInner.innerHTML = ""; // Puliamo il carosello
 
-  if (result.media.length <= 1) {
-    preArrow.classList.add("visually-hidden");
-    nextArrow.classList.add("visually-hidden");
+  if (listing.media && listing.media.length > 0) {
+    listing.media.forEach((item, index) => {
+      const divItem = document.createElement("div");
+      // La prima immagine DEVE avere la classe 'active' per essere visibile subito
+      divItem.className =
+        index === 0 ? "carousel-item active" : "carousel-item";
+
+      const pic = document.createElement("img");
+      pic.src = item.url; // Fondamentale .url per v2
+      pic.className = "d-block w-100";
+      pic.alt = listing.title;
+      pic.style.height = "400px"; // Opzionale: per uniformare l'altezza
+      pic.style.objectFit = "cover";
+
+      divItem.appendChild(pic);
+      carouselInner.appendChild(divItem);
+    });
+  } else {
+    // Immagine di fallback se non ci sono foto
+    carouselInner.innerHTML = `
+      <div class="carousel-item active">
+        <img src="https://placeholder.com" class="d-block w-100" />
+      </div>`;
   }
 
-  imgDiv.appendChild(pic);
-
-  if (result.media.length > 1) {
-    for (let i = 1; i < result.media.length; i++) {
-      const carouselInner = document.querySelector("#carousel-inner");
-      const divCards = document.createElement("div");
-      divCards.className = "carousel-item";
-      const pic = document.createElement("img");
-      pic.src = result.media[i];
-      pic.className = "d-block w-100";
-
-      carouselInner.appendChild(divCards).appendChild(pic);
-    }
+  // 4. NASCONDIAMO LE FRECCE SE C'È SOLO UNA FOTO
+  if (listing.media.length <= 1) {
+    if (preArrow) preArrow.classList.add("visually-hidden");
+    if (nextArrow) nextArrow.classList.add("visually-hidden");
+  } else {
+    if (preArrow) preArrow.classList.remove("visually-hidden");
+    if (nextArrow) nextArrow.classList.remove("visually-hidden");
   }
 }
