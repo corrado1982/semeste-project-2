@@ -23,49 +23,34 @@ export async function readListings() {
   console.log(result.data);
 
   result.data.forEach((element) => {
+    // Uso l'optional chaining ?. per evitare crash se media o avatar mancano
+    const imageUrl = element.media?.[0]?.url || "https://placeholder.com";
+    const sellerAvatarUrl =
+      element.seller?.avatar?.url || "https://placeholder.com";
+
     cardsContainer.innerHTML += `
     <div id="card" class="col-6 m-5 card" style="width: 18rem">
-
-      <h5 id="seller-name" class="card-text my-1 d-flex justify-content-around align-items-center"
-          ><p class="text-secondary my-auto">by:</p> ${element.seller.name}
-          <img src="${element.seller.avatar.url}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
+      <h5 class="card-text my-1 d-flex justify-content-around align-items-center">
+          <p class="text-secondary my-auto">by:</p> ${element.seller?.name || "Unknown"}
+          <img src="${sellerAvatarUrl}" class="rounded float-end w-25" alt="avatar" />
       </h5>
-        
-          <div class="card-body">
-          <img src="${element.media[0].url}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
-            <h5 id="itemTitle" class="card-title mt-2">${element.title}</h5>
-            <hr>
-            <div class="row">
-            
+      <div class="card-body">
+          <img src="${imageUrl}" class="card-img-top" alt="${element.title}" />
+          <h5 class="card-title mt-2">${element.title}</h5>
+          <hr>
+          <div class="row">
               <p class="card-text col-6">Bids</p>
-              <p
-                id="actualPrice"
-                class="card-text col-6 d-flex justify-content-end"
-              >${element._count.bids}
-                
-              </p>
-            </div>
-            <hr>
-            <div class="row d-flex flex-wrap">
-              <p class="card-text mb-0">Expiring :</p>
-              <p
-                id="remainingTime"
-                class="card-text"
-              >
-              ${element.endsAt}
-              </p>
-            </div>
-
-
-          <a 
-            href="/listing/index.html?id=${element.id}" 
-            class="btn btn-primary d-flex justify-content-center mt-3"
-            >See details
-          </a>
-           
+              <p class="card-text col-6 d-flex justify-content-end">${element._count.bids}</p>
           </div>
-        </div>
-    `;
+          <hr>
+          <div class="row d-flex flex-wrap">
+              <p class="card-text mb-0">Expiring :</p>
+              <p class="card-text">${new Date(element.endsAt).toLocaleString()}</p>
+          </div>
+          <a href="/listing/index.html?id=${element.id}" class="btn btn-primary d-flex justify-content-center mt-3">See details</a>
+      </div>
+    </div>`;
+    // ELIMINATO il console.log che rompeva tutto
   });
 }
 

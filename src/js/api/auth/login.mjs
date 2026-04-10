@@ -1,34 +1,50 @@
-import { BASE_URL } from "../constants.mjs";
-import { LOGIN_URL } from "../constants.mjs";
+import { BASE_URL, API_KEY } from "../constants.mjs"; // Assicurati di importare API_KEY
 import * as storage from "../../storage/index.mjs";
-import handleErrors from "../handleErrors.mjs";
 
-const action = LOGIN_URL; //to update
-const method = "post";
-
-export async function login(profile) {
-  const loginUrl = BASE_URL + action;
-  const body = JSON.stringify(profile);
-
-  const response = await fetch(loginUrl, {
+export async function login(userCredentials) {
+  const response = await fetch(`${BASE_URL}/auth/login`, {
+    method: "POST",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
-    method,
-    body,
+    body: JSON.stringify(userCredentials),
   });
 
-  if (response.ok) {
-    const { accessToken, ...user } = await response.json();
-    storage.save("token", accessToken);
-    storage.save("profile", user);
-    // storage separate avatar
-    storage.save("avatar", user.avatar);
+  const result = await response.json();
 
-    console.log(response);
-    location.href = "/listings"; //    ----change location-----
-    return;
+  if (response.ok) {
+    const { accessToken, name, avatar } = result.data;
+
+    // 1. Salva i dati base immediati
+    storage.save("token", accessToken);
+    storage.save("username", name);
+    storage.save("avatar", avatar?.url || "");
+
+    // 2. Recupero crediti dal profilo (Endpoint Auction v2)
+    const profileResponse = await fetch(
+      `${BASE_URL}/auction/profiles/${name}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "X-Noroff-API-Key": "7fccfec0-78b7-453b-8740-7ea3d687a25b", // Usa la variabile reale qui!
+        },
+      },
+    );
+
+    const profileData = await profileResponse.json();
+
+    if (profileResponse.ok) {
+      // 3. Salviamo l'intero oggetto profilo (che ora contiene i credits)
+      storage.save("profile", profileData.data);
+      console.log("Crediti recuperati:", profileData.data.credits);
+    }
+
+    // alert("Login successful!");
+    window.location.href = "/listings";
+    return result.data;
+  } else {
+    const errorMessage = result.errors?.[0]?.message || "Login failed";
+    alert(errorMessage);
+    throw new Error(errorMessage);
   }
-  const loginJson = await response.json();
-  handleErrors(loginJson);
 }
