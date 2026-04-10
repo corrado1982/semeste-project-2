@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../api/constants.mjs";
+import { BASE_URL, API_KEY } from "../../api/constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
 //showing in the avatar html the avatar is saved now
@@ -12,26 +12,34 @@ export function actualAvatar() {
   showAuctualAvatar.innerHTML = `<img src="${actualAvatar}" class=" m-auto  p-0" alt="image of ${userName} s Avata">`;
 }
 
-const method = "put";
-
-export async function updateAvatar(avatarUrl) {
-  const body = JSON.stringify(avatarUrl);
+export async function updateAvatar(newUrl) {
   const token = storage.load("token");
-  const profile = storage.load("profile");
-  const userName = profile.name;
+  const userName = storage.load("username");
 
-  const avatarRequest = BASE_URL + "/profiles/" + userName + "/media";
-
-  const response = await fetch(avatarRequest, {
-    method,
-    body,
+  const response = await fetch(`${BASE_URL}/auction/profiles/${userName}`, {
+    method: "PUT",
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
+      "X-Noroff-API-Key": API_KEY,
     },
+    // V2 richiede l'oggetto avatar con url e alt
+    body: JSON.stringify({
+      avatar: {
+        url: newUrl,
+        alt: `${userName} avatar`,
+      },
+    }),
   });
 
-  console.log(response);
-  storage.save("avatar", avatarUrl.avatar); //saving new avatar on local storage
-  location.reload(); //update it rigth away
+  const result = await response.json();
+
+  if (response.ok) {
+    // alert("Avatar updated!");
+    // Aggiorniamo lo storage con l'URL pulito della v2
+    storage.save("avatar", result.data.avatar.url);
+    location.reload();
+  } else {
+    alert("Error: " + result.errors?.[0]?.message);
+  }
 }

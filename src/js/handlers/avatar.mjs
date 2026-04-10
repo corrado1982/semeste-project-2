@@ -1,5 +1,7 @@
 import { updateAvatar } from "../api/auth/avatar.mjs";
+
 import { actualAvatar } from "../api/auth/avatar.mjs";
+
 export function setAvatarListener() {
   actualAvatar();
 
@@ -7,12 +9,17 @@ export function setAvatarListener() {
 
   avatarForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    const profileUrl = Object.fromEntries(formData.entries());
 
-    await updateAvatar(profileUrl);
+    const formData = new FormData(event.target);
+    const rawData = Object.fromEntries(formData.entries());
+    console.log("rawData", rawData);
+    const avatarUrl = rawData.avatar;
 
-    form.reset();
+    if (avatarUrl) {
+      console.log("profileUrl", avatarUrl);
+      await updateAvatar(avatarUrl);
+
+      event.target.reset();
+    }
   });
 }

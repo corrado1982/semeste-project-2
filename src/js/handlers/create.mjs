@@ -9,16 +9,31 @@ export function createListener() {
 
     const form = event.target;
     const formData = new FormData(form);
-    const profile = Object.fromEntries(formData.entries());
+    const rawData = Object.fromEntries(formData.entries());
 
-    profile.tags = profile.tags.split(",").map((tag) => tag.trim());
-    profile.media = profile.media.split(",").map((link) => link.trim());
-    profile.endsAt;
+    const mediaArray = rawData.media
+      ? rawData.media.split(",").map((link) => ({
+          url: link.trim(),
+          alt: rawData.title || "Listing image",
+        }))
+      : [];
+
+    const tagsArray = rawData.tags
+      ? rawData.tags.split(",").map((tag) => tag.trim())
+      : [];
+
+    const listingData = {
+      title: rawData.title,
+      description: rawData.description,
+      tags: tagsArray,
+      media: mediaArray, // Ora è un array di oggetti!
+      endsAt: new Date(rawData.endsAt).toISOString(), // Assicuriamoci che sia in formato ISO
+    };
 
     console.log(formData);
-    console.log(profile);
+
     try {
-      const response = await create(profile);
+      const response = await create(listingData);
       console.log(response);
       displayMessage("success", "you created a Listing!", "#message");
       form.reset();
