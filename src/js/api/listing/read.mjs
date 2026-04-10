@@ -6,58 +6,33 @@ const cardExpire = document.querySelector("#remainingTime");
 const cardDescription = document.querySelector("#description");
 const cardBidsContainer = document.querySelector("#bid-details");
 const cardsContainer = document.querySelector("#cardsContainer");
-
 const sellerName = document.querySelector("#seller-name");
 const sellerAvatar = document.querySelector("#seller-avatar");
 
-// "&_active=true"
-// let isItActive = "";
-
 const displayActive = "&_active=true";
 const bidsUrl = "?_bids=true";
-const listingsUrlEnd = "/listings/";
+const listingsUrlEnd = "/auction/listings/";
 const listingsUrl = BASE_URL + listingsUrlEnd;
 
-//prova filtro
-// const filterActive = document.querySelector("#filter-active");
-// const filterValue = Number(filterActive.value);
-
-// if (filterValue === 1) {
-//   displayActive = "&_active=false";
-// }
-// if (filterValue === 2) {
-//   displayActive = displayActive.replace("false", "true");
-// }
-// filterActive.addEventListener("change", (event) => {
-//   event.preventDefault();
-
-//   console.log(displayActive);
-//   readListings();
-//   location.reload();
-// });
-
-// console.log(filterActive.value);
-// console.log(displayActive);
-//fino qui
 export async function readListings() {
   const response = await fetch(
-    listingsUrl + bidsUrl + "&_seller=true" + displayActive
+    listingsUrl + bidsUrl + "&_seller=true" + displayActive,
   );
   console.log(displayActive);
   const result = await response.json();
-  console.log(result);
+  console.log(result.data);
 
-  result.forEach((element) => {
+  result.data.forEach((element) => {
     cardsContainer.innerHTML += `
     <div id="card" class="col-6 m-5 card" style="width: 18rem">
 
       <h5 id="seller-name" class="card-text my-1 d-flex justify-content-around align-items-center"
           ><p class="text-secondary my-auto">by:</p> ${element.seller.name}
-          <img src="${element.seller.avatar}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
+          <img src="${element.seller.avatar.url}" id="seller-avatar" class="rounded float-end w-25" alt="avatar of ${element.seller.name}" />
       </h5>
         
           <div class="card-body">
-          <img src="${element.media[0]}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
+          <img src="${element.media[0].url}" id="itemImage" class="card-img-top" alt="image of ${element.title}" />
             <h5 id="itemTitle" class="card-title mt-2">${element.title}</h5>
             <hr>
             <div class="row">
