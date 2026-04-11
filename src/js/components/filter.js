@@ -1,21 +1,26 @@
-const searchImput = document.getElementById("search-imput");
+const searchInput = document.getElementById("search-imput"); // Mantengo il tuo ID con la 'm' per non romperti l'HTML
 const listingCards = document.getElementsByClassName("card");
-console.log("filter");
 
 const searchListing = () => {
-  const searchTerm = searchImput.value.toLowerCase();
-  console.log(searchTerm);
+  const searchTerm = searchInput.value.toLowerCase();
 
   Array.from(listingCards).forEach((card) => {
-    const listingTitle = card
-      .querySelector("#itemTitle")
-      .textContent.toLowerCase();
+    // CAMBIO: Usiamo .card-title invece di #itemTitle
+    const titleElement = card.querySelector(".card-title");
 
-    if (listingTitle.includes(searchTerm)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+    // Controllo di sicurezza: se l'elemento esiste, leggiamo il testo
+    if (titleElement) {
+      const listingTitle = titleElement.textContent.toLowerCase();
+
+      if (listingTitle.includes(searchTerm)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     }
   });
 };
-searchImput.addEventListener("input", searchListing);
+
+if (searchInput) {
+  searchInput.addEventListener("input", searchListing);
+}
